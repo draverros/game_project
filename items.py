@@ -300,6 +300,15 @@ class Topaz(Valuable):
     def __init__(self, name="Topaz", description="Transparent golden yellow", value=500):
         Valuable.__init__(self, name, description, value)
 
+# Test
+class Topaz(Valuable):
+    def __init__(self, name="Topaz", description="Transparent golden yellow", value=500):
+        Valuable.__init__(self, name, description, value)
+
+class Topaz(Valuable):
+    def __init__(self, name="Topaz", description="Transparent golden yellow", value=500):
+        Valuable.__init__(self, name, description, value)
+
 
 
 
