@@ -138,15 +138,15 @@ class Azurite(Valuable):
     def __init__(self, name="Azurite", description="Opaque mottled deep blue", value=10):
         Valuable.__init__(self, name, description, value)
 
-class Banded_agate(Valuable):
+class BandedAgate(Valuable):
     def __init__(self, name="Banded Agate", description="Translucent striped brown, blue, white, or red", value=10):
         Valuable.__init__(self, name, description, value)
 
-class Blue_quartz(Valuable):
+class BlueQuartz(Valuable):
     def __init__(self, name="Blue Quartz", description="Transparent pale blue", value=10):
         Valuable.__init__(self, name, description, value)
 
-class Eye_agate(Valuable):
+class EyeAgate(Valuable):
     def __init__(self, name="Eye Agate", description="Translucent circles of gray, white, brown, blue, or green", value=10):
         Valuable.__init__(self, name, description, value)
 
@@ -154,7 +154,7 @@ class Hematite(Valuable):
     def __init__(self, name="Hematite", description="Opaque gray=black", value=10):
         Valuable.__init__(self, name, description, value)
 
-class Lapis_lazuli(Valuable):
+class LapisLazuli(Valuable):
     def __init__(self, name="Lapis Lazuli", description="Opaque light and dark blue with yellow flecks", value=10):
         Valuable.__init__(self, name, description, value)
 
@@ -162,7 +162,7 @@ class Malachite(Valuable):
     def __init__(self, name="Malachite", description="Opaque striated light and dark green", value=10):
         Valuable.__init__(self, name, description, value)
 
-class Moss_agate(Valuable):
+class MossAgate(Valuable):
     def __init__(self, name="Moss Agate", description="Translucent pink or yellow-white with mossy gray or green markings", value=10):
         Valuable.__init__(self, name, description, value)
 
@@ -174,7 +174,7 @@ class Rhodochrosite(Valuable):
     def __init__(self, name="Rhodochrosite", description="Opaque light pink", value=10):
         Valuable.__init__(self, name, description, value)
 
-class Tiger_eye(Valuable):
+class TigerEye(Valuable):
     def __init__(self, name="Tiger Eye", description="Translucent brown with golden center", value=10):
         Valuable.__init__(self, name, description, value)
 
@@ -224,7 +224,7 @@ class Sardonyx(Valuable):
     def __init__(self, name="Sardonyx", description="Opaque bands of red and white", value=50):
         Valuable.__init__(self, name, description, value)
 
-class Star_rose_quartz(Valuable):
+class StarRoseQuartz(Valuable):
     def __init__(self, name="Star Rose Quartz", description="Translucent rosy stone with white star-shaped centre", value=50):
         Valuable.__init__(self, name, description, value)
 
@@ -284,11 +284,11 @@ class Aquamarine(Valuable):
     def __init__(self, name="Aquamarine", description="Transparent pale blue-green", value=500):
         Valuable.__init__(self, name, description, value)
 
-class Black_pearl(Valuable):
+class BlackPearl(Valuable):
     def __init__(self, name="Black Pearl", description="Opaque pure black", value=500):
         Valuable.__init__(self, name, description, value)
 
-class Blue_spinel(Valuable):
+class BlueSpinel(Valuable):
     def __init__(self, name="Blue Spinel", description="Transparent deep blue", value=500):
         Valuable.__init__(self, name, description, value)
 
@@ -300,18 +300,57 @@ class Topaz(Valuable):
     def __init__(self, name="Topaz", description="Transparent golden yellow", value=500):
         Valuable.__init__(self, name, description, value)
 
-# Test
-class Topaz(Valuable):
-    def __init__(self, name="Topaz", description="Transparent golden yellow", value=500):
+# 1000 gp Gemstones
+
+class BlacOpal(Valuable):
+    def __init__(self, name="Black Opal", description="Translucent dark green with black mottling and golden flecks", value=1000):
         Valuable.__init__(self, name, description, value)
 
-class Topaz(Valuable):
-    def __init__(self, name="Topaz", description="Transparent golden yellow", value=500):
+class BlueSapphire(Valuable):
+    def __init__(self, name="Blue Sapphire", description="Transparent blue-white to medium blue", value=1000):
         Valuable.__init__(self, name, description, value)
 
+class Emerald(Valuable):
+    def __init__(self, name="Emerald", description="Transparent deep bright green", value=1000):
+        Valuable.__init__(self, name, description, value)
 
+class FireOpal(Valuable):
+    def __init__(self, name="Fire Opal", description="Translucent fiery red", value=1000):
+        Valuable.__init__(self, name, description, value)
 
+class Opal(Valuable):
+    def __init__(self, name="Opal", description="Translucent pale blue with green and golden mottling", value=1000):
+        Valuable.__init__(self, name, description, value)
 
+class StarRuby(Valuable):
+    def __init__(self, name="Star Ruby", description="Translucent ruby with white star-shaped center", value=1000):
+        Valuable.__init__(self, name, description, value)
+
+class StarSapphire(Valuable):
+    def __init__(self, name="Star Sapphire", description="Translucent blue sapphire with white star-shaped center", value=1000):
+        Valuable.__init__(self, name, description, value)
+
+class YellowSapphire(Valuable):
+    def __init__(self, name="Yellow Sapphire", description="Transparent fiery yellow or yellow-green", value=1000):
+        Valuable.__init__(self, name, description, value)
+
+# 5000 gp Gemstones
+
+class BlackSapphire(Valuable):
+    def __init__(self, name="Black Sapphire", description="Translucent lustrous black with glowing highlights", value=5000):
+        Valuable.__init__(self, name, description, value)
+
+class Diamond(Valuable):
+    def __init__(self, name="Diamond", description="Transparent blue-white, canary, pink, brown, or blue", value=5000):
+        Valuable.__init__(self, name, description, value)
+
+class Jacinth(Valuable):
+    def __init__(self, name="Jacinth", description="Transparent fiery orange", value=5000):
+        Valuable.__init__(self, name, description, value)
+
+class Ruby(Valuable):
+    def __init__(self, name="Ruby", description="Transparent clear red to deep crimson", value=5000):
+        Valuable.__init__(self, name, description, value)
 
 
 
