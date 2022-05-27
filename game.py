@@ -163,6 +163,7 @@ def setup_game():
     myPlayer.dexterity_roll = random.randint(8, 18)
     myPlayer.intelligence_roll = random.randint(8, 18)
     myPlayer.constitution_roll = random.randint(8, 18)
+    myPlayer.charisma_roll = random.randint(8, 18)
 
     # Player Class Stats
     if myPlayer.profession == 'fighter':
@@ -170,6 +171,7 @@ def setup_game():
         myPlayer.dexterity_profession = 0
         myPlayer.intelligence_profession = 0
         myPlayer.constitution_profession = 0
+        myPlayer.charsma_profession = 0
         myPlayer.hp_profession = 10
         myPlayer.mp_profession = 0
     elif myPlayer.profession == 'paladin':
@@ -177,6 +179,7 @@ def setup_game():
         myPlayer.dexterity_profession = 0
         myPlayer.intelligence_profession = 0
         myPlayer.constitution_profession = 2
+        myPlayer.charsma_profession = 0
         myPlayer.hp_profession = 10
         myPlayer.mp_profession = 0
     elif myPlayer.profession == 'rouge':
@@ -184,6 +187,7 @@ def setup_game():
         myPlayer.dexterity_profession = 2
         myPlayer.intelligence_profession = 0
         myPlayer.constitution_profession = 0
+        myPlayer.charsma_profession = 0
         myPlayer.hp_profession = 8
         myPlayer.mp_profession = 0
     elif myPlayer.profession == 'wizard':
@@ -191,6 +195,7 @@ def setup_game():
         myPlayer.dexterity_profession = 0
         myPlayer.intelligence_profession = 2
         myPlayer.constitution_profession = 0
+        myPlayer.charsma_profession = 0
         myPlayer.hp_profession = 6
         myPlayer.mp_profession = 0
 
@@ -200,27 +205,32 @@ def setup_game():
         myPlayer.dexterity_race = 0
         myPlayer.intelligence_race = 0
         myPlayer.constitution_race = 0
+        myPlayer.charisma_race = 0
     elif myPlayer.race == 'dwarf':
         myPlayer.strength_race = 0
         myPlayer.dexterity_race = 0
         myPlayer.intelligence_race = 0
         myPlayer.constitution_race = 2
+        myPlayer.charisma_racer = 2
     elif myPlayer.race == 'elf':
         myPlayer.strength_race = 0
         myPlayer.dexterity_race = 2
         myPlayer.intelligence_race = 0
         myPlayer.constitution_race = 0
+        myPlayer.charisma_race = 0
     elif myPlayer.race == 'tiefling':
         myPlayer.strength_race = 0
         myPlayer.dexterity_race = 0
         myPlayer.intelligence_race = 2
         myPlayer.constitution_race = 0
+        myPlayer.charisma_race = 0
 
     # Player Stats Final
     myPlayer.strength = myPlayer.strength_roll + myPlayer.strength_profession + myPlayer.strength_race
     myPlayer.dexterity = myPlayer.dexterity_roll + myPlayer.dexterity_profession + myPlayer.dexterity_race
     myPlayer.intelligence = myPlayer.intelligence_roll + myPlayer.intelligence_profession + myPlayer.intelligence_race
     myPlayer.constitution = myPlayer.constitution_roll + myPlayer.constitution_profession + myPlayer.constitution_race
+    myPlayer.charisma = myPlayer.charisma_roll + myPlayer.charsma_profession + myPlayer.charisma_race
 
     # Player HP modifiers
     if myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 10:
@@ -257,6 +267,7 @@ def setup_game():
           f"Dexterity: {myPlayer.dexterity}\n"
           f"Intelligence: {myPlayer.intelligence}\n"
           f"Constitution: {myPlayer.constitution}\n"
+          f"Charisma: {myPlayer.charisma}\n"
           f"HP: {myPlayer.hp}.\n")
 
     # Statistics acceptance or reroll
@@ -273,11 +284,13 @@ def setup_game():
             myPlayer.dexterity_roll = random.randint(8, 18)
             myPlayer.intelligence_roll = random.randint(8, 18)
             myPlayer.constitution_roll = random.randint(8, 18)
+            myPlayer.charisma_roll = random.randint(8, 18)
 
             myPlayer.strength = myPlayer.strength_roll + myPlayer.strength_profession + myPlayer.strength_race
             myPlayer.dexterity = myPlayer.dexterity_roll + myPlayer.dexterity_profession + myPlayer.dexterity_race
             myPlayer.intelligence = myPlayer.intelligence_roll + myPlayer.intelligence_profession + myPlayer.intelligence_race
             myPlayer.constitution = myPlayer.constitution_roll + myPlayer.constitution_profession + myPlayer.constitution_race
+            myPlayer.charisma = myPlayer.charisma_roll + myPlayer.charsma_profession + myPlayer.charisma_race
 
             if myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 10:
                 myPlayer.constitution_mod = -1
@@ -312,6 +325,7 @@ def setup_game():
                   f"Dexterity: {myPlayer.dexterity}\n"
                   f"Intelligence: {myPlayer.intelligence}\n"
                   f"Constitution: {myPlayer.constitution}\n"
+                  f"Charisma: {myPlayer.charisma}\n"
                   f"HP: {myPlayer.hp}.\n")
 
         elif player_reroll.lower() == "no":
@@ -340,6 +354,7 @@ def setup_game():
                   f"Dexterity: {myPlayer.dexterity}\n"
                   f"Intelligence: {myPlayer.intelligence}\n"
                   f"Constitution: {myPlayer.constitution}\n"
+                  f"Charisma: {myPlayer.charisma}\n"
                   f"HP: {myPlayer.hp}.\n")
             print()
 
@@ -358,10 +373,11 @@ def setup_game():
                 if shop_choice == -1:
                     break
                 elif shop_choice == 0:
-                    print("BUY")
+                    buy_choice = check_menu_range("What would you like to buy?", )
                 elif shop_choice == 1:
-                    print("SELL")
+                    sell_choice = check_menu_range("What would you like to sell?", )
                 elif shop_choice == 2:
                     show_inventory(myPlayer.inventory)
+
 
 title_screen()
