@@ -322,7 +322,7 @@ def setup_game():
     print(f"Welcome, {player_name}. You are a {player_race}, a {player_profession}.")
 
     while not myPlayer.game_over:
-        choice = check_menu_range(city_nev.neverwinter_menu)
+        choice = check_menu_range("> ", city_nev.neverwinter_menu)
 
         def show_inventory(inventory_list):
             if len(inventory_list) < 1:
