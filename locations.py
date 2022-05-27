@@ -1,6 +1,13 @@
+import items
+
 # Neverwinter
 
 # Shining Knight Arms and Armour
+
+class ShiningKnightArmsAndArmour:
+    def __init__(self):
+        self.shining_knight_buy = []
+        self.shining_knight_sell = 
 
 # Tarmalune Trade House
 
