@@ -1,13 +1,16 @@
 import items
 
+weapon = items.Club()
+armour = items.StuddedLeatherArmour()
+
 # Neverwinter
 
 # Shining Knight Arms and Armour
 
 class ShiningKnightArmsAndArmour:
     def __init__(self):
-        self.shining_knight_buy = [Club(),]
-        self.shining_knight_sell = 
+        self.shining_knight_buy = [weapon.name, armour.name]
+
 
 # Tarmalune Trade House
 

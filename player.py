@@ -1,11 +1,13 @@
-import items
+from items import*
 
-class Player:
+class Player(object):
     def __init__(self):
         self.name = ""
         self.race = ""
         self.profession = ""
-        self.inventory = [items.Club(), items.BrestplateArmour()]
+        self.equipped_weapon = Club()
+        self.equipped_armour = HideArmour()
+        self.inventory = []
         self.gold = 1
         self.location = ""
 
@@ -35,6 +37,8 @@ class Player:
 
         # Modifiers
         self.constitution_mod = 0
+        self.damage_mod = 0
+        self.armour_class = 0
 
         # Player final
         self.strength = 0

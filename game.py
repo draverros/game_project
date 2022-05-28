@@ -12,6 +12,7 @@ import os
 import time
 
 
+
 # Title Screen #
 def title_screen_selections():
     option = input("> ")
@@ -75,6 +76,8 @@ def help_menu():
 
 
 myPlayer = player.Player()
+shining = locations.ShiningKnightArmsAndArmour()
+
 
 
 def main_game_loop():
@@ -340,7 +343,7 @@ def setup_game():
 
         def show_inventory(inventory_list):
             if len(inventory_list) < 1:
-                print("Inventory is EMPTY!")
+                print("Inventory is empty.")
                 return
             uniq_inventory_list = list(set(inventory_list))
             for i in range(len(uniq_inventory_list)):
@@ -364,6 +367,8 @@ def setup_game():
             print()
             print(f"You have {myPlayer.gold} gold")
             print()
+            print(f"Your weapon is {myPlayer.equipped_weapon.name}")
+            print(f"Your armour is {myPlayer.equipped_armour.name}")
 
         elif choice == 2:
                 print(f"You currently have {myPlayer.gold} gold.")
@@ -373,7 +378,8 @@ def setup_game():
                 if shop_choice == -1:
                     break
                 elif shop_choice == 0:
-                    buy_choice = check_menu_range("What would you like to buy?", )
+                    buy_choice = check_menu_range("What would you like to buy?", shining.shining_knight_buy)
+                    myPlayer.inventory.append(shining.shining_knight_buy[buy_choice])
                 elif shop_choice == 1:
                     sell_choice = check_menu_range("What would you like to sell?", )
                 elif shop_choice == 2:
