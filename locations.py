@@ -6,7 +6,7 @@ import items
 
 class ShiningKnightArmsAndArmour:
     def __init__(self):
-        self.shining_knight_buy = []
+        self.shining_knight_buy = [Club(),]
         self.shining_knight_sell = 
 
 # Tarmalune Trade House
