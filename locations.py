@@ -26,6 +26,15 @@ def check_menu_range(question, list_name, is_cancelable=False):
         else:
             return index
 
+def show_inventory(inventory_list):
+    if len(inventory_list) < 1:
+        print("Inventory is empty.")
+        return
+    uniq_inventory_list = list(set(inventory_list))
+    for i in range(len(uniq_inventory_list)):
+        print(
+            str(i) + ") " + str(uniq_inventory_list[i]) + "(" + str(inventory_list.count(uniq_inventory_list[i]))
+            + ")")
 
 # Neverwinter
 
@@ -59,10 +68,36 @@ def ShiningKnightArmsAndArmour(Player):
                     print("error")
                 elif shop_choice == 0:
                     buy_choice = check_menu_range("What would you like to buy?", lists.shining)
-                    if myPlayer.gold - lists.shining.value[buy_choice] >= 0:
-                        myPlayer.inventory.append(lists.shining[buy_choice])
-                        myPlayer.gold -= lists.shining.value[buy_choice]
+                   # if myPlayer.gold - lists.shining.name[buy_choice] >= 0:
+                    myPlayer.inventory.append(lists.shining[buy_choice])
+                    #    myPlayer.gold -= lists.shining.name[buy_choice]
                 elif shop_choice == 1:
                     sell_choice = check_menu_range("What would you like to sell?", )
                 elif shop_choice == 2:
                     show_inventory(myPlayer.inventory)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

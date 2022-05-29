@@ -8,8 +8,6 @@
 # Armour
 # Valuables (Gems and Art)
 
-
-
 # Weapons
 
 class Weapon:
@@ -127,7 +125,7 @@ class StuddedLeatherArmour(Armour):
 # Valuable
 
 class Valuable:
-    def __init__(self, name, value):
+    def __init__(self, name, description, value):
         self.name = name
         self.description = description
         self.value = value

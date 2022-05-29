@@ -31,7 +31,7 @@ class Player(object):
         self.dexterity_profession = 0
         self.intelligence_profession = 0
         self.constitution_profession = 0
-        self.charsma_profession = 0
+        self.charisma_profession = 0
         self.hp_profession = 0
         self.mp_profession = 0
 

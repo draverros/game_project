@@ -172,7 +172,7 @@ def setup_game():
         myPlayer.dexterity_profession = 0
         myPlayer.intelligence_profession = 0
         myPlayer.constitution_profession = 0
-        myPlayer.charsma_profession = 0
+        myPlayer.charisma_profession = 0
         myPlayer.hp_profession = 10
         myPlayer.mp_profession = 0
     elif myPlayer.profession == 'paladin':
@@ -180,7 +180,7 @@ def setup_game():
         myPlayer.dexterity_profession = 0
         myPlayer.intelligence_profession = 0
         myPlayer.constitution_profession = 2
-        myPlayer.charsma_profession = 0
+        myPlayer.charisma_profession = 0
         myPlayer.hp_profession = 10
         myPlayer.mp_profession = 0
     elif myPlayer.profession == 'rouge':
