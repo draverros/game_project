@@ -12,7 +12,6 @@ import os
 import time
 
 
-
 # Title Screen #
 def title_screen_selections():
     option = input("> ")
@@ -369,6 +368,35 @@ def setup_game():
             print()
             print(f"Your weapon is {myPlayer.equipped_weapon.name}")
             print(f"Your armour is {myPlayer.equipped_armour.name}")
+            print()
+            print("Would you like to change your weapon(W) or armour(A)?")
+            choice = input("> ").upper()
+            if choice == ("W"):
+
+                Weapons = [item for item in myPlayer.inventory if isinstance (item, Weapon)]
+
+                if not Weapons:
+                    print("You have no weapons to equip")
+                    break
+
+                print("Choose a weapon to equip: ")
+
+                for i,item in enumerate(Weapons,1):
+                    print("{}. {}".format(i,item))
+
+                valid = False
+                while not valid:
+                    choice = input("> ")
+                    try:
+                        bob=myPlayer.equipped_weapon # fix bug that replicate item if error 
+                        myPlayer.inventory.remove(Weapons[int(choice)-1])
+                        myPlayer.equipped_weapon=Weapons[int(choice)-1]
+                        myPlayer.inventory.append(bob)
+                        print("You arm yourself with :",Weapons[int(choice)-1])
+                        valid=True 
+
+                    except (ValueError,IndexError):
+                        print("Invalid choice, try again ")
 
         elif choice == 2:
                 print(f"You currently have {myPlayer.gold} gold.")
@@ -379,7 +407,9 @@ def setup_game():
                     break
                 elif shop_choice == 0:
                     buy_choice = check_menu_range("What would you like to buy?", shining.shining_knight_buy)
-                    myPlayer.inventory.append(shining.shining_knight_buy[buy_choice])
+                    if myPlayer.gold - shining.shining_knight_buy.value[buy_choice] >= 0:
+                        myPlayer.inventory.append(shining.shining_knight_buy[buy_choice])
+                        myPlayer.gold -= shining_knight_buy.value[buy_choice]
                 elif shop_choice == 1:
                     sell_choice = check_menu_range("What would you like to sell?", )
                 elif shop_choice == 2:
@@ -387,3 +417,30 @@ def setup_game():
 
 
 title_screen()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3,7 +3,7 @@
 # adding subclass so that in future each weapon can potentialy have
 # unique function
 
-# List:
+# List: 
 # Weapons
 # Armour
 # Valuables (Gems and Art)
@@ -21,7 +21,7 @@ class Weapon:
     def __str__(self):
         return "{} +{} damage ".format(self.name, self.damage)
 
-class Club  (Weapon):
+class Club(Weapon):
     def __init__(self, name="Club", damage=4, value=0.1):
         Weapon.__init__(self, name, damage, value)
 
@@ -29,7 +29,7 @@ class Crossbow  (Weapon):
     def __init__(self, name="Crossbow", damage=8, value=25):
         Weapon.__init__(self, name, damage, value)
 
-class Dagger  (Weapon):
+class Dagger(Weapon):
     def __init__(self, name="Dagger", damage=4, value=2):
         Weapon.__init__(self, name, damage, value)
 

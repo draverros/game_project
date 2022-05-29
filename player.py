@@ -8,7 +8,7 @@ class Player(object):
         self.equipped_weapon = Club()
         self.equipped_armour = HideArmour()
         self.inventory = []
-        self.gold = 1
+        self.gold = 1000
         self.location = ""
 
         # Roll Stats
