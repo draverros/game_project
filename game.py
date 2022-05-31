@@ -5,12 +5,13 @@ import player
 import items
 import monsters
 import locations
+import lists
 
 import random
 import sys
 import os
 import time
-#test
+
 
 # Title Screen #
 def title_screen_selections():
@@ -83,258 +84,258 @@ def main_game_loop():
         prompt()
 
 def setup_game():
-    os.system('clear')
+    #os.system('clear')
 
-    # Player Name
-    question1 = "What is your name, noble warrior?\n"
-    for character in question1:
-        sys.stdout.write(character)
-        sys.stdout.flush()
-        time.sleep(0.05)
-    player_name = input("> ")
-    print()
-    myPlayer.name = player_name
+    # # Player Name
+    # question1 = "What is your name, noble warrior?\n"
+    # for character in question1:
+    #     sys.stdout.write(character)
+    #     sys.stdout.flush()
+    #     time.sleep(0.05)
+    # player_name = input("> ")
+    # print()
+    # myPlayer.name = player_name
 
-    # Player Race
-    question2 = "What is your race, noble warrior?\n"
-    question2added = "You can play as a human, dwarf, elf or tiefling.\n"
+    # # Player Race
+    # question2 = "What is your race, noble warrior?\n"
+    # question2added = "You can play as a human, dwarf, elf or tiefling.\n"
 
-    for character in question2:
-        sys.stdout.write(character)
-        sys.stdout.flush()
-        time.sleep(0.05)
-    for character in question2added:
-        sys.stdout.write(character)
-        sys.stdout.flush()
-        time.sleep(0.03)
+    # for character in question2:
+    #     sys.stdout.write(character)
+    #     sys.stdout.flush()
+    #     time.sleep(0.05)
+    # for character in question2added:
+    #     sys.stdout.write(character)
+    #     sys.stdout.flush()
+    #     time.sleep(0.03)
 
-    print()
-    print("Human: +2 Strength\n")
-    print("Dwarf: +2 Constitution\n")
-    print("Elf: +2 Dexterity\n")
-    print("Tiefling: +2 Intelligence\n")
+    # print()
+    # print("Human: +2 Strength\n")
+    # print("Dwarf: +2 Constitution\n")
+    # print("Elf: +2 Dexterity\n")
+    # print("Tiefling: +2 Intelligence\n")
 
-    player_race = input("> ")
-    valid_races = ["human", "dwarf", "elf", "tiefling"]
+    # player_race = input("> ")
+    # valid_races = ["human", "dwarf", "elf", "tiefling"]
 
-    if player_race.lower() in valid_races:
-        myPlayer.race = player_race
-        print(f"So you are a {player_race}, huh? Interesting.\n")
-    while player_race.lower() not in valid_races:
-        print("Please try again.")
-        player_race = input("> ")
-        if player_race.lower() in valid_races:
-            myPlayer.race = player_race
-            print(f"So you are a {player_race}, huh? Interesting.\n")
+    # if player_race.lower() in valid_races:
+    #     myPlayer.race = player_race
+    #     print(f"So you are a {player_race}, huh? Interesting.\n")
+    # while player_race.lower() not in valid_races:
+    #     print("Please try again.")
+    #     player_race = input("> ")
+    #     if player_race.lower() in valid_races:
+    #         myPlayer.race = player_race
+    #         print(f"So you are a {player_race}, huh? Interesting.\n")
 
-    # Player class
-    question3 = "What do you specialise in, noble warrior?\n"
-    question3added = "You can play as a fighter, paladin, rouge or wizard.\n"
-    for character in question3:
-        sys.stdout.write(character)
-        sys.stdout.flush()
-        time.sleep(0.05)
-    for character in question3added:
-        sys.stdout.write(character)
-        sys.stdout.flush()
-        time.sleep(0.03)
+    # # Player class
+    # question3 = "What do you specialise in, noble warrior?\n"
+    # question3added = "You can play as a fighter, paladin, rouge or wizard.\n"
+    # for character in question3:
+    #     sys.stdout.write(character)
+    #     sys.stdout.flush()
+    #     time.sleep(0.05)
+    # for character in question3added:
+    #     sys.stdout.write(character)
+    #     sys.stdout.flush()
+    #     time.sleep(0.03)
 
-    print()
-    print("Fighter: +2 Strength\n")
-    print("Paladin: +2 Constitution\n")
-    print("Rouge: +2 Dexterity\n")
-    print("Wizard: +2 Intelligence\n")
+    # print()
+    # print("Fighter: +2 Strength\n")
+    # print("Paladin: +2 Constitution\n")
+    # print("Rouge: +2 Dexterity\n")
+    # print("Wizard: +2 Intelligence\n")
 
-    player_profession = input("> ")
-    valid_professions = ['fighter', 'paladin', 'rouge', 'wizard']
+    # player_profession = input("> ")
+    # valid_professions = ['fighter', 'paladin', 'rouge', 'wizard']
 
-    if player_profession.lower() in valid_professions:
-        myPlayer.profession = player_profession
-        print(f"A {player_profession}, ey? In that case, I wish you luck. You will need it.\n")
-        print(f"")
-    while player_profession.lower() not in valid_professions:
-        print("Please try again.")
-        player_profession = input("> ")
-        if player_profession.lower() in valid_professions:
-            myPlayer.profession = player_profession
-            print(f"A {player_profession}, ey? In that case, I wish you luck. You will need it.\n")
+    # if player_profession.lower() in valid_professions:
+    #     myPlayer.profession = player_profession
+    #     print(f"A {player_profession}, ey? In that case, I wish you luck. You will need it.\n")
+    #     print(f"")
+    # while player_profession.lower() not in valid_professions:
+    #     print("Please try again.")
+    #     player_profession = input("> ")
+    #     if player_profession.lower() in valid_professions:
+    #         myPlayer.profession = player_profession
+    #         print(f"A {player_profession}, ey? In that case, I wish you luck. You will need it.\n")
 
-    # Player Roll Stats
-    myPlayer.strength_roll = random.randint(8, 18)
-    myPlayer.dexterity_roll = random.randint(8, 18)
-    myPlayer.intelligence_roll = random.randint(8, 18)
-    myPlayer.constitution_roll = random.randint(8, 18)
-    myPlayer.charisma_roll = random.randint(8, 18)
+    # # Player Roll Stats
+    # myPlayer.strength_roll = random.randint(8, 18)
+    # myPlayer.dexterity_roll = random.randint(8, 18)
+    # myPlayer.intelligence_roll = random.randint(8, 18)
+    # myPlayer.constitution_roll = random.randint(8, 18)
+    # myPlayer.charisma_roll = random.randint(8, 18)
 
-    # Player Class Stats
-    if myPlayer.profession == 'fighter':
-        myPlayer.strength_profession = 2
-        myPlayer.dexterity_profession = 0
-        myPlayer.intelligence_profession = 0
-        myPlayer.constitution_profession = 0
-        myPlayer.charisma_profession = 0
-        myPlayer.hp_profession = 10
-        myPlayer.mp_profession = 0
-    elif myPlayer.profession == 'paladin':
-        myPlayer.strength_profession = 0
-        myPlayer.dexterity_profession = 0
-        myPlayer.intelligence_profession = 0
-        myPlayer.constitution_profession = 2
-        myPlayer.charisma_profession = 0
-        myPlayer.hp_profession = 10
-        myPlayer.mp_profession = 0
-    elif myPlayer.profession == 'rouge':
-        myPlayer.strength_profession = 0
-        myPlayer.dexterity_profession = 2
-        myPlayer.intelligence_profession = 0
-        myPlayer.constitution_profession = 0
-        myPlayer.charsma_profession = 0
-        myPlayer.hp_profession = 8
-        myPlayer.mp_profession = 0
-    elif myPlayer.profession == 'wizard':
-        myPlayer.strength_profession = 0
-        myPlayer.dexterity_profession = 0
-        myPlayer.intelligence_profession = 2
-        myPlayer.constitution_profession = 0
-        myPlayer.charsma_profession = 0
-        myPlayer.hp_profession = 6
-        myPlayer.mp_profession = 0
+    # # Player Class Stats
+    # if myPlayer.profession == 'fighter':
+    #     myPlayer.strength_profession = 2
+    #     myPlayer.dexterity_profession = 0
+    #     myPlayer.intelligence_profession = 0
+    #     myPlayer.constitution_profession = 0
+    #     myPlayer.charisma_profession = 0
+    #     myPlayer.hp_profession = 10
+    #     myPlayer.mp_profession = 0
+    # elif myPlayer.profession == 'paladin':
+    #     myPlayer.strength_profession = 0
+    #     myPlayer.dexterity_profession = 0
+    #     myPlayer.intelligence_profession = 0
+    #     myPlayer.constitution_profession = 2
+    #     myPlayer.charisma_profession = 0
+    #     myPlayer.hp_profession = 10
+    #     myPlayer.mp_profession = 0
+    # elif myPlayer.profession == 'rouge':
+    #     myPlayer.strength_profession = 0
+    #     myPlayer.dexterity_profession = 2
+    #     myPlayer.intelligence_profession = 0
+    #     myPlayer.constitution_profession = 0
+    #     myPlayer.charsma_profession = 0
+    #     myPlayer.hp_profession = 8
+    #     myPlayer.mp_profession = 0
+    # elif myPlayer.profession == 'wizard':
+    #     myPlayer.strength_profession = 0
+    #     myPlayer.dexterity_profession = 0
+    #     myPlayer.intelligence_profession = 2
+    #     myPlayer.constitution_profession = 0
+    #     myPlayer.charsma_profession = 0
+    #     myPlayer.hp_profession = 6
+    #     myPlayer.mp_profession = 0
 
-    # Player Race Stats
-    if myPlayer.race == 'human':
-        myPlayer.strength_race = 2
-        myPlayer.dexterity_race = 0
-        myPlayer.intelligence_race = 0
-        myPlayer.constitution_race = 0
-        myPlayer.charisma_race = 0
-    elif myPlayer.race == 'dwarf':
-        myPlayer.strength_race = 0
-        myPlayer.dexterity_race = 0
-        myPlayer.intelligence_race = 0
-        myPlayer.constitution_race = 2
-        myPlayer.charisma_racer = 2
-    elif myPlayer.race == 'elf':
-        myPlayer.strength_race = 0
-        myPlayer.dexterity_race = 2
-        myPlayer.intelligence_race = 0
-        myPlayer.constitution_race = 0
-        myPlayer.charisma_race = 0
-    elif myPlayer.race == 'tiefling':
-        myPlayer.strength_race = 0
-        myPlayer.dexterity_race = 0
-        myPlayer.intelligence_race = 2
-        myPlayer.constitution_race = 0
-        myPlayer.charisma_race = 0
+    # # Player Race Stats
+    # if myPlayer.race == 'human':
+    #     myPlayer.strength_race = 2
+    #     myPlayer.dexterity_race = 0
+    #     myPlayer.intelligence_race = 0
+    #     myPlayer.constitution_race = 0
+    #     myPlayer.charisma_race = 0
+    # elif myPlayer.race == 'dwarf':
+    #     myPlayer.strength_race = 0
+    #     myPlayer.dexterity_race = 0
+    #     myPlayer.intelligence_race = 0
+    #     myPlayer.constitution_race = 2
+    #     myPlayer.charisma_racer = 2
+    # elif myPlayer.race == 'elf':
+    #     myPlayer.strength_race = 0
+    #     myPlayer.dexterity_race = 2
+    #     myPlayer.intelligence_race = 0
+    #     myPlayer.constitution_race = 0
+    #     myPlayer.charisma_race = 0
+    # elif myPlayer.race == 'tiefling':
+    #     myPlayer.strength_race = 0
+    #     myPlayer.dexterity_race = 0
+    #     myPlayer.intelligence_race = 2
+    #     myPlayer.constitution_race = 0
+    #     myPlayer.charisma_race = 0
 
-    # Player Stats Final
-    myPlayer.strength = myPlayer.strength_roll + myPlayer.strength_profession + myPlayer.strength_race
-    myPlayer.dexterity = myPlayer.dexterity_roll + myPlayer.dexterity_profession + myPlayer.dexterity_race
-    myPlayer.intelligence = myPlayer.intelligence_roll + myPlayer.intelligence_profession + myPlayer.intelligence_race
-    myPlayer.constitution = myPlayer.constitution_roll + myPlayer.constitution_profession + myPlayer.constitution_race
-    myPlayer.charisma = myPlayer.charisma_roll + myPlayer.charsma_profession + myPlayer.charisma_race
+    # # Player Stats Final
+    # myPlayer.strength = myPlayer.strength_roll + myPlayer.strength_profession + myPlayer.strength_race
+    # myPlayer.dexterity = myPlayer.dexterity_roll + myPlayer.dexterity_profession + myPlayer.dexterity_race
+    # myPlayer.intelligence = myPlayer.intelligence_roll + myPlayer.intelligence_profession + myPlayer.intelligence_race
+    # myPlayer.constitution = myPlayer.constitution_roll + myPlayer.constitution_profession + myPlayer.constitution_race
+    # myPlayer.charisma = myPlayer.charisma_roll + myPlayer.charsma_profession + myPlayer.charisma_race
 
-    # Player HP modifiers
-    if myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 10:
-        myPlayer.constitution_mod = -1
-    elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 12:
-        myPlayer.constitution_mod = 0
-    elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 14:
-        myPlayer.constitution_mod = 1
-    elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 16:
-        myPlayer.constitution_mod = 2
-    elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 18:
-        myPlayer.constitution_mod = 3
-    elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 20:
-        myPlayer.constitution_mod = 4
-    elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 22:
-        myPlayer.constitution_mod = 5
-    elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 24:
-        myPlayer.constitution_mod = 6
-    elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 26:
-        myPlayer.constitution_mod = 7
-    elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 28:
-        myPlayer.constitution_mod = 8
-    elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 30:
-        myPlayer.constitution_mod = 9
-    elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession == 30:
-        myPlayer.constitution_mod = 10
+    # # Player HP modifiers
+    # if myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 10:
+    #     myPlayer.constitution_mod = -1
+    # elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 12:
+    #     myPlayer.constitution_mod = 0
+    # elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 14:
+    #     myPlayer.constitution_mod = 1
+    # elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 16:
+    #     myPlayer.constitution_mod = 2
+    # elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 18:
+    #     myPlayer.constitution_mod = 3
+    # elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 20:
+    #     myPlayer.constitution_mod = 4
+    # elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 22:
+    #     myPlayer.constitution_mod = 5
+    # elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 24:
+    #     myPlayer.constitution_mod = 6
+    # elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 26:
+    #     myPlayer.constitution_mod = 7
+    # elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 28:
+    #     myPlayer.constitution_mod = 8
+    # elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 30:
+    #     myPlayer.constitution_mod = 9
+    # elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession == 30:
+    #     myPlayer.constitution_mod = 10
 
-    myPlayer.hp = myPlayer.hp_profession + myPlayer.constitution_mod
-    myPlayer.mp = 0
+    # myPlayer.hp = myPlayer.hp_profession + myPlayer.constitution_mod
+    # myPlayer.mp = 0
 
-    os.system('clear')
-    print(f"Your statistics are:\n")
-    print(f"Strength: {myPlayer.strength}\n"
-          f"Dexterity: {myPlayer.dexterity}\n"
-          f"Intelligence: {myPlayer.intelligence}\n"
-          f"Constitution: {myPlayer.constitution}\n"
-          f"Charisma: {myPlayer.charisma}\n"
-          f"HP: {myPlayer.hp}.\n")
+    # os.system('clear')
+    # print(f"Your statistics are:\n")
+    # print(f"Strength: {myPlayer.strength}\n"
+    #       f"Dexterity: {myPlayer.dexterity}\n"
+    #       f"Intelligence: {myPlayer.intelligence}\n"
+    #       f"Constitution: {myPlayer.constitution}\n"
+    #       f"Charisma: {myPlayer.charisma}\n"
+    #       f"HP: {myPlayer.hp}.\n")
 
-    # Statistics acceptance or reroll
-    ask_again = True
-    def reroll_def():
-        global ask_again
-    while ask_again:
-        reroll_def()
-        print("Would you like to roll for the stats again?? (Yes/No)")
-        player_reroll = input("> ")
-        if player_reroll.lower() == "yes":
-            ask_again = True
-            myPlayer.strength_roll = random.randint(8, 18)
-            myPlayer.dexterity_roll = random.randint(8, 18)
-            myPlayer.intelligence_roll = random.randint(8, 18)
-            myPlayer.constitution_roll = random.randint(8, 18)
-            myPlayer.charisma_roll = random.randint(8, 18)
+    # # Statistics acceptance or reroll
+    # ask_again = True
+    # def reroll_def():
+    #     global ask_again
+    # while ask_again:
+    #     reroll_def()
+    #     print("Would you like to roll for the stats again?? (Yes/No)")
+    #     player_reroll = input("> ")
+    #     if player_reroll.lower() == "yes":
+    #         ask_again = True
+    #         myPlayer.strength_roll = random.randint(8, 18)
+    #         myPlayer.dexterity_roll = random.randint(8, 18)
+    #         myPlayer.intelligence_roll = random.randint(8, 18)
+    #         myPlayer.constitution_roll = random.randint(8, 18)
+    #         myPlayer.charisma_roll = random.randint(8, 18)
 
-            myPlayer.strength = myPlayer.strength_roll + myPlayer.strength_profession + myPlayer.strength_race
-            myPlayer.dexterity = myPlayer.dexterity_roll + myPlayer.dexterity_profession + myPlayer.dexterity_race
-            myPlayer.intelligence = myPlayer.intelligence_roll + myPlayer.intelligence_profession + myPlayer.intelligence_race
-            myPlayer.constitution = myPlayer.constitution_roll + myPlayer.constitution_profession + myPlayer.constitution_race
-            myPlayer.charisma = myPlayer.charisma_roll + myPlayer.charsma_profession + myPlayer.charisma_race
+    #         myPlayer.strength = myPlayer.strength_roll + myPlayer.strength_profession + myPlayer.strength_race
+    #         myPlayer.dexterity = myPlayer.dexterity_roll + myPlayer.dexterity_profession + myPlayer.dexterity_race
+    #         myPlayer.intelligence = myPlayer.intelligence_roll + myPlayer.intelligence_profession + myPlayer.intelligence_race
+    #         myPlayer.constitution = myPlayer.constitution_roll + myPlayer.constitution_profession + myPlayer.constitution_race
+    #         myPlayer.charisma = myPlayer.charisma_roll + myPlayer.charsma_profession + myPlayer.charisma_race
 
-            if myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 10:
-                myPlayer.constitution_mod = -1
-            elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 12:
-                myPlayer.constitution_mod = 0
-            elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 14:
-                myPlayer.constitution_mod = 1
-            elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 16:
-                myPlayer.constitution_mod = 2
-            elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 18:
-                myPlayer.constitution_mod = 3
-            elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 20:
-                myPlayer.constitution_mod = 4
-            elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 22:
-                myPlayer.constitution_mod = 5
-            elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 24:
-                myPlayer.constitution_mod = 6
-            elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 26:
-                myPlayer.constitution_mod = 7
-            elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 28:
-                myPlayer.constitution_mod = 8
-            elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 30:
-                myPlayer.constitution_mod = 9
-            elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession == 30:
-                myPlayer.constitution_mod = 10
+    #         if myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 10:
+    #             myPlayer.constitution_mod = -1
+    #         elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 12:
+    #             myPlayer.constitution_mod = 0
+    #         elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 14:
+    #             myPlayer.constitution_mod = 1
+    #         elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 16:
+    #             myPlayer.constitution_mod = 2
+    #         elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 18:
+    #             myPlayer.constitution_mod = 3
+    #         elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 20:
+    #             myPlayer.constitution_mod = 4
+    #         elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 22:
+    #             myPlayer.constitution_mod = 5
+    #         elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 24:
+    #             myPlayer.constitution_mod = 6
+    #         elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 26:
+    #             myPlayer.constitution_mod = 7
+    #         elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 28:
+    #             myPlayer.constitution_mod = 8
+    #         elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 30:
+    #             myPlayer.constitution_mod = 9
+    #         elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession == 30:
+    #             myPlayer.constitution_mod = 10
 
-            myPlayer.hp = myPlayer.hp_profession + myPlayer.constitution_mod
-            myPlayer.mp = 0
+    #         myPlayer.hp = myPlayer.hp_profession + myPlayer.constitution_mod
+    #         myPlayer.mp = 0
 
-            print(f"Your statistics are:\n")
-            print(f"Strength: {myPlayer.strength}\n"
-                  f"Dexterity: {myPlayer.dexterity}\n"
-                  f"Intelligence: {myPlayer.intelligence}\n"
-                  f"Constitution: {myPlayer.constitution}\n"
-                  f"Charisma: {myPlayer.charisma}\n"
-                  f"HP: {myPlayer.hp}.\n")
+    #         print(f"Your statistics are:\n")
+    #         print(f"Strength: {myPlayer.strength}\n"
+    #               f"Dexterity: {myPlayer.dexterity}\n"
+    #               f"Intelligence: {myPlayer.intelligence}\n"
+    #               f"Constitution: {myPlayer.constitution}\n"
+    #               f"Charisma: {myPlayer.charisma}\n"
+    #               f"HP: {myPlayer.hp}.\n")
 
-        elif player_reroll.lower() == "no":
-            ask_again = False
+    #     elif player_reroll.lower() == "no":
+    #         ask_again = False
 
     os.system('clear')
     city_nev = cities.Neverwinter()
-    print(f"Welcome, {player_name}. You are a {player_race}, a {player_profession}.")
+    #print(f"Welcome, {player_name}. You are a {player_race}, a {player_profession}.")
 
     while not myPlayer.game_over:
         choice = check_menu_range("> ", city_nev.neverwinter_menu)
@@ -361,7 +362,7 @@ def setup_game():
 
         elif choice == 1:
             print(f"Your inventory contains:")
-            show_inventory(myPlayer.inventory)
+            show_inventory(myPlayer.inventory)  
             print()
             print(f"You have {myPlayer.gold} gold")
             print()
@@ -398,7 +399,24 @@ def setup_game():
                         print("Invalid choice, try again ")
 
         elif choice == 2:
-            locations.ShiningKnightArmsAndArmour(player)
+                print(f"You currently have {myPlayer.gold} gold.")
+                shop_choice = check_menu_range("Welcome, traveller, to the Shining Knight Arms and Armour, "
+                                              "the finest weapons and amour in the whole Neverwinter! Are you buying "
+                                              "or selling?", ["Buy", "Sell", "Show Inventory"], True)
+                if shop_choice == -1:
+                    print("error")
+                elif shop_choice == 0:
+                    # Rebuild the below to print the list of items
+                    buy_choice = check_menu_range("What would you like to buy?", lists.shining[0])
+                    if myPlayer.gold - lists.shining[1][buy_choice] >= 0:
+                        myPlayer.inventory.append(lists.shining[buy_choice])
+                        myPlayer.gold -= lists.shining[1][buy_choice]
+                    # buy_choice = check_menu_range("What would you like to buy?"list.shini)
+
+                elif shop_choice == 1:
+                    sell_choice = check_menu_range("What would you like to sell?", )
+                elif shop_choice == 2:
+                    show_inventory(myPlayer.inventory)
 
 title_screen()
 
