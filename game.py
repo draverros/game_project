@@ -399,7 +399,8 @@ def setup_game():
                         print("Invalid choice, try again ")
 
         elif choice == 2:
-            locations.ShiningKnight(Player)
+            locations.ShiningKnight(myPlayer)
+            print("")
 
 title_screen()
 

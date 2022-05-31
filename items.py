@@ -22,7 +22,7 @@ class Weapon:
 class Club(Weapon):
     def __init__(self, name="Club", damage=4, value=0.1):
         Weapon.__init__(self, name, damage, value)
-        # Shops; Shining
+        # Shops: Shining
 
 class Crossbow  (Weapon):
     def __init__(self, name="Crossbow", damage=8, value=25):
