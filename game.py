@@ -399,31 +399,7 @@ def setup_game():
                         print("Invalid choice, try again ")
 
         elif choice == 2:
-                print(f"You currently have {myPlayer.gold} gold.")
-                shop_choice = check_menu_range("Welcome, traveller, to the Shining Knight Arms and Armour, "
-                                              "the finest weapons and amour in the whole Neverwinter! Are you buying "
-                                              "or selling?", ["Buy", "Sell", "Show Inventory"], True)
-                if shop_choice == -1:
-                    print("error")
-                elif shop_choice == 0:
-                    # Rebuild the below to print the list of items
-                    #buy_choice = check_menu_range("What would you like to buy?", lists.shining[0])
-                    #if myPlayer.gold - lists.shining[1][buy_choice] >= 0:
-                    #    myPlayer.inventory.append(lists.shining[0][buy_choice])
-                    #    myPlayer.gold -= lists.shining[1][buy_choice]
-                    print("Would you like to buy a Club or a Dagger?")
-                choice = input("Choice: ").upper()
-                if choice == ("C"):
-                    myPlayer.inventory.append(Club())
-                    print("You got a club")
-                elif choice == ("D"):
-                    myPlayer.inventory.append(Dagger())
-                    print("You got a dagger")
- 
-                elif shop_choice == 1:
-                    sell_choice = check_menu_range("What would you like to sell?", )
-                elif shop_choice == 2:
-                    show_inventory(myPlayer.inventory)
+            locations.ShiningKnight(Player)
 
 title_screen()
 
