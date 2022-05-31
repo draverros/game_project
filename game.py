@@ -338,7 +338,7 @@ def setup_game():
     #print(f"Welcome, {player_name}. You are a {player_race}, a {player_profession}.")
 
     while not myPlayer.game_over:
-        choice = check_menu_range("> ", city_nev.neverwinter_menu)
+        choice = check_menu_range("> ",city_nev.neverwinter_menu)
 
         def show_inventory(inventory_list):
             if len(inventory_list) < 1:
@@ -401,6 +401,35 @@ def setup_game():
         elif choice == 2:
             locations.ShiningKnight(myPlayer)
             print("")
+
+        elif choice == 3:
+            locations.Tarmalune(myPlayer)
+            print("")
+
+        elif choice == 4:
+            locations.HouseOfKnowledge(myPlayer)
+            print("")
+
+        elif choice == 5:
+            locations.ShiningSerpent(myPlayer)
+            print("")
+
+        elif choice == 6:
+            locations.HouseOfFaces(myPlayer)
+            print("")
+
+        elif choice == 7:
+            locations.DannarsMechanical(myPlayer)
+            print("")
+
+        elif choice == 8:
+            locations.MaskadosMaps(myPlayer)
+            print("")
+
+        elif choice == 9:
+            locations.CloakTower("myPlayer")
+            print("")
+
 
 title_screen()
 

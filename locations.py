@@ -126,16 +126,29 @@ def ShiningKnight(Player):
 	    show_inventory(Player.inventory)
 
 # Tarmalune Trade House
-
+def Tarmalune(Player):
+	print("Tarmalune Trade House")
 
 # House of Knowledge
+def HouseOfKnowledge(Player):
+	print("House of Knowledge")
 
 # Shining Serpent Inn
+def ShiningSerpent(Player):
+	print("Shining Serpent Inn")
 
 # House of a Thousand Faces
+def HouseOfFaces(Player):
+	print("House of a Thousand Faces")
 
 # Dannar's Mechanical Marvels
+def DannarsMechanical(Player):
+	print("Dannar's Mechanical Marvels")
 
 # Maskado's Maps and Legends
+def MaskadosMaps(Player):
+	print("Maskado's Maps and Legends")
 
 # Cloak Tower
+def CloakTower(Player):
+	print("Cloak Tower")
