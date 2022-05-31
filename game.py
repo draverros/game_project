@@ -409,10 +409,9 @@ def setup_game():
                     # Rebuild the below to print the list of items
                     buy_choice = check_menu_range("What would you like to buy?", lists.shining[0])
                     if myPlayer.gold - lists.shining[1][buy_choice] >= 0:
-                        myPlayer.inventory.append(lists.shining[buy_choice])
+                        myPlayer.inventory.append(lists.shining[0][buy_choice])
                         myPlayer.gold -= lists.shining[1][buy_choice]
-                    # buy_choice = check_menu_range("What would you like to buy?"list.shini)
-
+ 
                 elif shop_choice == 1:
                     sell_choice = check_menu_range("What would you like to sell?", )
                 elif shop_choice == 2:

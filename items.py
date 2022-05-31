@@ -22,6 +22,7 @@ class Weapon:
 class Club(Weapon):
     def __init__(self, name="Club", damage=4, value=0.1):
         Weapon.__init__(self, name, damage, value)
+        # Shops; Shining
 
 class Crossbow  (Weapon):
     def __init__(self, name="Crossbow", damage=8, value=25):
@@ -30,10 +31,12 @@ class Crossbow  (Weapon):
 class Dagger(Weapon):
     def __init__(self, name="Dagger", damage=4, value=2):
         Weapon.__init__(self, name, damage, value)
+        # Shops: Shining
 
 class Handaxe  (Weapon):
     def __init__(self, name="Handaxe", damage=6, value=5):
         Weapon.__init__(self, name, damage, value)
+        # Shops: Shining
 
 class Longbow  (Weapon):
     def __init__(self, name="Longbow", damage=8, value=50):
@@ -42,14 +45,17 @@ class Longbow  (Weapon):
 class Longsword  (Weapon):
     def __init__(self, name="Longsword", damage=8, value=15):
         Weapon.__init__(self, name, damage, value)
+        # Shops: Shining
 
 class Mace  (Weapon):
     def __init__(self, name="Mace", damage=6, value=5):
         Weapon.__init__(self, name, damage, value)
+        # Shops: Shining
 
 class Quarterstaff  (Weapon):
     def __init__(self, name="Quarterstaff", damage=6, value=2):
         Weapon.__init__(self, name, damage, value)
+        # Shops: Shining
 
 class Shortbow  (Weapon):
     def __init__(self, name="Shortbow", damage=6, value=15):
@@ -62,6 +68,7 @@ class Sling  (Weapon):
 class Warhammer  (Weapon):
     def __init__(self, name="Warhammer", damage=8, value=15):
         Weapon.__init__(self, name, damage, value)
+        # Shops: Shining
 
 # Armour
 
