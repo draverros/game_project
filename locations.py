@@ -129,12 +129,25 @@ def ShiningKnight(Player):
 			print("You got a Brestplate Armour")
 			print("")
 
-
 	elif shop_choice == 1:
-	    if len(Player.inventory) > 0:
-	    	itemList = list(set(Player.inventory))
-	    	show_inventory(Player.inventory)
-	    	sellChoice = check_menu_range("What would you like to sell?", Player.inventory)
+		if len(Player.inventory) > 0:
+			print("What would you like to sell? A weapon(W), an armour(A) or valuables(V)?")
+			sell_choice = input("Choice: ").upper()
+
+			if sell_choice == "W":
+				Weapons = [item for item in Player.inventory if isinstance(item, Weapon)]
+				for i,item in enumerate(Weapons,1):
+					print("{}.{}".format(i,item))
+
+			elif sell_choice == "A":
+				Armours = [item for item in Player.inventory if isinstance(item, Armour)]
+				for i,item in enumerate(Armours,1):
+					print("{}.{}".format(i,item))
+
+			elif sell_choice == "V":
+				Valuables = [item for item in Player.inventory if isinstance(item, Valuable)]
+				for i,item in enumerate(Valuables,1):
+					print("{}.{}".format(i,item))
 
 	elif shop_choice == 2:
 		print("")
