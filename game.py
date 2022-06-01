@@ -406,7 +406,7 @@ def setup_game():
                     print("You have no armour to equip.")
                     break
 
-                print("Choose te armour to equip: ")
+                print("Choose the armour to equip: ")
 
                 for i,item in enumerate(Armours,1):
                     print("{}.{}".format(i,item))

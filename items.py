@@ -17,7 +17,7 @@ class Weapon:
         self.value = value
         
     def __str__(self):
-        return "{} +{} damage ".format(self.name, self.damage)
+        return "{} - Damage: +{} - Gold value: {} ".format(self.name, self.damage, self.value)
 
 class Club(Weapon):
     def __init__(self, name="Club", damage=4, value=0.1):
@@ -79,7 +79,7 @@ class Armour:
         self.value = value
         
     def __str__(self):
-        return "{} +{} protection ".format(self.name, self.protection)
+        return "{} - Protection: +{} - Gold value: {} ".format(self.name, self.protection, self.value)
 
 class BrestplateArmour(Armour):
     def __init__(self, name="Brestplate Armour", protection=14, value=400):
@@ -136,6 +136,11 @@ class Valuable:
         self.name = name
         self.description = description
         self.value = value
+
+    def __str__(self):
+        return "{} - Gold value: {} ".format(self.name, self.value)
+
+
 
 # 10 GP Gemstones
 
