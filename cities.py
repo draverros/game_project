@@ -1,7 +1,7 @@
 class Neverwinter:
     def __init__(self):
         self.neverwinter_menu = ["View Stats", "Inventory", "Shining Knight Arms and Armour", "Tarmalune Trade House",
-                                 "House of Knowledge", "Shining Serpent Inn", "Dungeon 1", "Dungeon 2", "Dungeon 3",
+                                 "House of Knowledge", "Shining Serpent Inn", 
                                  "House of a Thousand Faces", "Dannar's Mechanical Marvels",
                                  "Maskado's Maps and Legends", "Cloak Tower"]
 

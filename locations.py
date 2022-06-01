@@ -38,7 +38,7 @@ def ShiningKnight(Player):
 	print(f"You currently have {Player.gold} gold.")
 	shop_choice = check_menu_range("Welcome, traveller, to the Shining Knight Arms and Armour, "
 	                              "the finest weapons and amour in the whole Neverwinter! Are you buying "
-	                              "or selling?", ["Buy", "Sell", "Show Inventory"], True)
+	                              "or selling?", ["Buy", "Sell", "Exit"], True)
 	if shop_choice == -1:
 	    print("error")
 
@@ -51,6 +51,7 @@ def ShiningKnight(Player):
 	    print("4) Mace - Damage: 6 - Cost: 5 ")
 	    print("5) Quarterstaff - Damage: 6 - Cost: 2")
 	    print("6) Warhammer - Damage: 8 - Cost: 15")
+	    print("7) Brestplate Armour - Protection: 14 - Cost: 400")
 
 
 	choice = input("Choice: ").upper()
@@ -116,14 +117,27 @@ def ShiningKnight(Player):
 		else:
 			Player.inventory.append(Warhammer())
 			Player.gold -= 15
-			print("You got a War.")
+			print("You got a Warhammer.")
 			print("")
 
+	elif choice == ("7"):
+		if Player.gold < 400:
+			print("You can't afford it.")
+		else:
+			Player.inventory.append(BrestplateArmour())
+			Player.gold -= 400
+			print("You got a Brestplate Armour")
+			print("")
+
+
 	elif shop_choice == 1:
-	    sell_choice = check_menu_range("What would you like to sell?", )
+	    if len(Player.inventory) > 0:
+	    	itemList = list(set(Player.inventory))
+	    	show_inventory(Player.inventory)
+	    	sellChoice = check_menu_range("What would you like to sell?", Player.inventory)
 
 	elif shop_choice == 2:
-	    show_inventory(Player.inventory)
+		print("")
 
 # Tarmalune Trade House
 def Tarmalune(Player):

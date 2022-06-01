@@ -376,7 +376,7 @@ def setup_game():
                 Weapons = [item for item in myPlayer.inventory if isinstance (item, Weapon)]
 
                 if not Weapons:
-                    print("You have no weapons to equip")
+                    print("You have no weapons to equip.")
                     break
 
                 print("Choose a weapon to equip: ")
@@ -398,9 +398,38 @@ def setup_game():
                     except (ValueError,IndexError):
                         print("Invalid choice, try again ")
 
+            if choice == ("A"):
+
+                Armours = [item for item in myPlayer.inventory if isinstance(item, Armour)]
+
+                if not Armours:
+                    print("You have no armour to equip.")
+                    break
+
+                print("Choose te armour to equip: ")
+
+                for i,item in enumerate(Armours,1):
+                    print("{}.{}".format(i,item))
+
+                valid=False
+                while not valid:
+                    choice = input("")
+                    try:
+                        bob=myPlayer.equipped_armour # fix bug that replace item if error
+                        myPlayer.inventory.remove(Armours[int(choice)-1])
+                        myPlayer.equipped_armour = Armours[int(choice)-1]
+                        myPlayer.inventory.append(bob)
+                        print("You start wearing: ", Armours[int(choice)-1])
+                        valid = True
+
+                    except (ValueError,IndexError):
+                        print("Invalid choice, try again.")
+
+
+
         elif choice == 2:
-            locations.ShiningKnight(myPlayer)
-            print("")
+            while True:
+                locations.ShiningKnight(myPlayer)
 
         elif choice == 3:
             locations.Tarmalune(myPlayer)
@@ -427,7 +456,7 @@ def setup_game():
             print("")
 
         elif choice == 9:
-            locations.CloakTower("myPlayer")
+            locations.CloakTower(myPlayer)
             print("")
 
 
