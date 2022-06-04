@@ -403,10 +403,39 @@ class RingCha(Ring):
 # Amulets
 
 class Amulet:
-    def __init__(self, name, value, item_type):
+    def __init__(self, name, description, value, item_type):
         self.name = name
+        self.description = description
         self.value = value
         self.item_type = item_type
+
+class AmuletProt(Amulet):
+    def __init__(self, name="Amulet of Protection",description="You gain a +1 bonus to AC while wearing this ring.", value=200, item_type="Amulet"):
+        Amulet.__init__(self, name, description, value, item_type)
+
+class AmuletLife(Amulet):
+    def __init__(self, name="Amulet of Life",description="You gain a 10 bonus to health while wearing this ring.", value=200, item_type="Amulet"):
+        Amulet.__init__(self, name, description, value, item_type)
+
+class AmuletStr(Amulet):
+    def __init__(self, name="Amulet of Strength",description="You gain a +2 bonus to your strength while wearing this ring.", value=200, item_type="Amulet"):
+        Amulet.__init__(self, name, description, value, item_type)
+
+class AmuletDex(Amulet):
+    def __init__(self, name="Amulet of Dexterity",description="You gain a +2 bonus to your dexterity while wearing this ring.", value=200, item_type="Amulet"):
+        Amulet.__init__(self, name, description, value, item_type)
+
+class AmuletInt(Amulet):
+    def __init__(self, name="Amulet of Intelligence",description="You gain a +2 bonus to your intelligence while wearing this ring.", value=200, item_type="Amulet"):
+        Amulet.__init__(self, name, description, value, item_type)
+
+class AmuletCon(Amulet):
+    def __init__(self, name="Amulet of Constitution",description="You gain a +2 bonus to your constitution while wearing this ring.", value=200, item_type="Amulet"):
+        Amulet.__init__(self, name, description, value, item_type)
+
+class AmuletCha(Amulet):
+    def __init__(self, name="Amulet of Charisma",description="You gain a +2 bonus to your charisma while wearing this ring.", value=200, item_type="Amulet"):
+        Amulet.__init__(self, name, description, value, item_type)
 
 # Artifacts
 
