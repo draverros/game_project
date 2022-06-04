@@ -362,7 +362,7 @@ def setup_game():
 
         elif choice == 1:
             print(f"Your inventory contains:")
-            show_inventory(myPlayer.inventory)  
+            show_inventory(myPlayer.inventory)
             print()
             print(f"You have {myPlayer.gold} gold")
             print()
@@ -388,12 +388,12 @@ def setup_game():
                 while not valid:
                     choice = input("> ")
                     try:
-                        bob=myPlayer.equipped_weapon # fix bug that replicate item if error 
+                        bob=myPlayer.equipped_weapon # fix bug that replicate item if error
                         myPlayer.inventory.remove(Weapons[int(choice)-1])
                         myPlayer.equipped_weapon=Weapons[int(choice)-1]
                         myPlayer.inventory.append(bob)
                         print("You arm yourself with :",Weapons[int(choice)-1])
-                        valid=True 
+                        valid=True
 
                     except (ValueError,IndexError):
                         print("Invalid choice, try again ")
@@ -459,32 +459,4 @@ def setup_game():
             locations.CloakTower(myPlayer)
             print("")
 
-
 title_screen()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -138,6 +138,7 @@ def ShiningKnight(Player):
 				Weapons = [item for item in Player.inventory if isinstance(item, Weapon)]
 				for i,item in enumerate(Weapons,1):
 					print("{}.{}".format(i,item))
+					weapon_sell_choice = input("Choice: ").upper()
 
 			elif sell_choice == "A":
 				Armours = [item for item in Player.inventory if isinstance(item, Armour)]
@@ -152,30 +153,30 @@ def ShiningKnight(Player):
 	elif shop_choice == 2:
 		print("")
 
-# Tarmalune Trade House
+# Tarmalune Trade House - shop with everything except weapons
 def Tarmalune(Player):
 	print("Tarmalune Trade House")
 
-# House of Knowledge
+# House of Knowledge - Temple to heal wounds for money
 def HouseOfKnowledge(Player):
-	print("House of Knowledge")
+	print("House of Knowledge") 
 
-# Shining Serpent Inn
+# Shining Serpent Inn - Inn with drinks and a bed to rest
 def ShiningSerpent(Player):
 	print("Shining Serpent Inn")
 
-# House of a Thousand Faces
+# House of a Thousand Faces - Headquarters of the Harpers
 def HouseOfFaces(Player):
 	print("House of a Thousand Faces")
 
-# Dannar's Mechanical Marvels
+# Dannar's Mechanical Marvels - artifacts shop
 def DannarsMechanical(Player):
 	print("Dannar's Mechanical Marvels")
 
-# Maskado's Maps and Legends
+# Maskado's Maps and Legends - shop selling rumors, maps and legends
 def MaskadosMaps(Player):
 	print("Maskado's Maps and Legends")
 
-# Cloak Tower
+# Cloak Tower - Wizard tower
 def CloakTower(Player):
 	print("Cloak Tower")
