@@ -363,13 +363,58 @@ class Ruby(Valuable):
     def __init__(self, name="Ruby", description="Transparent clear red to deep crimson", value=5000, item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
+# Rings
 
+class Ring:
+    def __init__(self, name, description, value, item_type):
+        self.name = name
+        self.description = description
+        self.value = value
+        self.item_type = item_type
 
+class RingProt(Ring):
+    def __init__(self, name="Ring of Protection",description="You gain a +1 bonus to AC while wearing this ring.", value=200, item_type="Ring"):
+        Ring.__init__(self, name, description, value, item_type)
 
+class RingLife(Ring):
+    def __init__(self, name="Ring of Life",description="You gain a 10 bonus to health while wearing this ring.", value=200, item_type="Ring"):
+        Ring.__init__(self, name, description, value, item_type)
 
+class RingStr(Ring):
+    def __init__(self, name="Ring of Strength",description="You gain a +2 bonus to your strength while wearing this ring.", value=200, item_type="Ring"):
+        Ring.__init__(self, name, description, value, item_type)
 
+class RingDex(Ring):
+    def __init__(self, name="Ring of Dexterity",description="You gain a +2 bonus to your dexterity while wearing this ring.", value=200, item_type="Ring"):
+        Ring.__init__(self, name, description, value, item_type)
 
+class RingInt(Ring):
+    def __init__(self, name="Ring of Intelligence",description="You gain a +2 bonus to your intelligence while wearing this ring.", value=200, item_type="Ring"):
+        Ring.__init__(self, name, description, value, item_type)
 
+class RingCon(Ring):
+    def __init__(self, name="Ring of Constitution",description="You gain a +2 bonus to your constitution while wearing this ring.", value=200, item_type="Ring"):
+        Ring.__init__(self, name, description, value, item_type)
+
+class RingCha(Ring):
+    def __init__(self, name="Ring of Charisma",description="You gain a +2 bonus to your charisma while wearing this ring.", value=200, item_type="Ring"):
+        Ring.__init__(self, name, description, value, item_type)
+
+# Amulets
+
+class Amulet:
+    def __init__(self, name, value, item_type):
+        self.name = name
+        self.value = value
+        self.item_type = item_type
+
+# Artifacts
+
+class Artifact:
+    def __init__(self, name, value, item_type):
+        self.name = name
+        self.value = value
+        self.item_type = item_type
 
 
 
