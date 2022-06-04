@@ -7,10 +7,10 @@ class Player(object):
         self.profession = ""
         self.equipped_weapon = Club()
         self.equipped_armour = HideArmour()
-        self.equipped_ring = 
-        self.equipped_amulet = 
-        self.equipped_artifact = 
-        self.inventory = ["test_item", BrestplateArmour(), Longsword(), Aquamarine(), Club(), Azurite()]
+        self.equipped_ring = RingStr()
+        self.equipped_amulet = AmuletStr()
+        #self.equipped_artifact = "." 
+        self.inventory = ["test_item", BrestplateArmour(), Longsword(), Aquamarine(), Club(), Azurite(), RingProt(), AmuletProt()]
         self.gold = 1000
         self.location = ""
 

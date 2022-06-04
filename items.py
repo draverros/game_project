@@ -372,6 +372,9 @@ class Ring:
         self.value = value
         self.item_type = item_type
 
+    def __str__(self):
+        return "{} - {} - Gold value: {} - Type: {} ".format(self.name, self.description, self.value, self.item_type)
+
 class RingProt(Ring):
     def __init__(self, name="Ring of Protection",description="You gain a +1 bonus to AC while wearing this ring.", value=200, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
@@ -409,6 +412,9 @@ class Amulet:
         self.value = value
         self.item_type = item_type
 
+    def __str__(self):
+        return "{} - {} - Gold value: {} - Type: {} ".format(self.name, self.description, self.value, self.item_type)
+
 class AmuletProt(Amulet):
     def __init__(self, name="Amulet of Protection",description="You gain a +1 bonus to AC while wearing this ring.", value=200, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
@@ -440,11 +446,14 @@ class AmuletCha(Amulet):
 # Artifacts
 
 class Artifact:
-    def __init__(self, name, value, item_type):
+    def __init__(self, name, description, value, item_type):
         self.name = name
+        self.description = description
         self.value = value
         self.item_type = item_type
 
+    def __str__(self):
+        return "{} - {} - Gold value: {} - Type: {} ".format(self.name, self.description, self.value, self.item_type)
 
 
 

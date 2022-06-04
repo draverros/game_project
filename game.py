@@ -350,7 +350,7 @@ def setup_game():
                     str(i) + ") " + str(uniq_inventory_list[i]) + "(" + str(inventory_list.count(uniq_inventory_list[i]))
                     + ")")
 
-        if choice == 0:
+        if choice == 0: # Print statistics
             print(f"Your statistics are:\n")
             print(f"Strength: {myPlayer.strength}\n"
                   f"Dexterity: {myPlayer.dexterity}\n"
@@ -360,7 +360,7 @@ def setup_game():
                   f"HP: {myPlayer.hp}.\n")
             print()
 
-        elif choice == 1:
+        elif choice == 1: #Print inventory + change equipement
             print(f"Your inventory contains:")
             show_inventory(myPlayer.inventory)
             print()
@@ -368,8 +368,11 @@ def setup_game():
             print()
             print(f"Your weapon is {myPlayer.equipped_weapon.name}")
             print(f"Your armour is {myPlayer.equipped_armour.name}")
+            print(f"You are currently wearing a {myPlayer.equipped_ring.name}")
+            print(f"You are currently wearing a {myPlayer.equipped_amulet.name}")
+            #print(f"You are currently wearing a {myPlayer.equipped_artifact.name}")
             print()
-            print("Would you like to change your weapon(W) or armour(A)?")
+            print("Would you like to change your weapon(W), armour(A) or other(O)?")
             choice = input("> ").upper()
             if choice == ("W"):
 
@@ -398,7 +401,7 @@ def setup_game():
                     except (ValueError,IndexError):
                         print("Invalid choice, try again ")
 
-            if choice == ("A"):
+            elif choice == ("A"):
 
                 Armours = [item for item in myPlayer.inventory if isinstance(item, Armour)]
 
@@ -424,6 +427,65 @@ def setup_game():
 
                     except (ValueError,IndexError):
                         print("Invalid choice, try again.")
+
+            elif choice == ("O"):
+                print("Would you like to change your ring(R), amulet(A) or artifact(M)?")
+                choice = input("> ").upper()
+
+                if choice == ("R").upper():
+
+                    Rings = [item for item in myPlayer.inventory if isinstance (item, Ring)]
+
+                    if not Rings:
+                        print("You have no rings to equip.")
+                        break
+
+                    print("Choose a ring to equip: ")
+
+                    for i,item in enumerate(Rings,1):
+                        print("{}. {}".format(i,item))
+
+                    valid = False
+                    while not valid:
+                        choice = input("> ")
+                        try:
+                            bob=myPlayer.equipped_ring # fix bug that replicate item if error
+                            myPlayer.inventory.remove(Rings[int(choice)-1])
+                            myPlayer.equipped_ring=Rings[int(choice)-1]
+                            myPlayer.inventory.append(bob)
+                            print("You arm yourself with :",Rings[int(choice)-1])
+                            valid=True
+
+                        except (ValueError,IndexError):
+                            print("Invalid choice, try again ")
+
+                elif choice == ("A").upper():
+
+                    Amulets = [item for item in myPlayer.inventory if isinstance (item, Amulet)]
+
+                    if not Amulets:
+                        print("You have no amulets to equip.")
+                        break
+
+                    print("Choose the amulet to equip: ")
+
+                    for i,item in enumerate(Amulets,1):
+                        print("{}. {}".format(i,item))
+
+                    valid = False
+                    while not valid:
+                        choice = input("> ")
+                        try:
+                            bob=myPlayer.equipped_amulet # fix bug that replicate item if error
+                            myPlayer.inventory.remove(Amulets[int(choice)-1])
+                            myPlayer.equipped_amulet=Amulets[int(choice)-1]
+                            myPlayer.inventory.append(bob)
+                            print("You arm yourself with :",Amulets[int(choice)-1])
+                            valid=True
+
+                        except (ValueError,IndexError):
+                            print("Invalid choice, try again ")
+
 
 
 
