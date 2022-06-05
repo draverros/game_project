@@ -43,91 +43,89 @@ def ShiningKnight(Player):
 	    print("error")
 
 	elif shop_choice == 0:
-	    print("What would you like to buy? ")
-	    print("0) Club - Damage: 4 - Cost: 0.1 gold")
-	    print("1) Dagger - Damage: 4 - Cost: 2 gold")
-	    print("2) Handaxe - Damage: 6 - Cost: 5 gold")
-	    print("3) Longsword - Damage: 8 - Cost: 15 gold")
-	    print("4) Mace - Damage: 6 - Cost: 5 ")
-	    print("5) Quarterstaff - Damage: 6 - Cost: 2")
-	    print("6) Warhammer - Damage: 8 - Cost: 15")
-	    print("7) Brestplate Armour - Protection: 14 - Cost: 400")
+	     print("What would you like to buy? ")
+	 #    print("0) Club - Damage: 4 - Cost: 0.1 gold")
+	 #    print("1) Dagger - Damage: 4 - Cost: 2 gold")
+	 #    print("2) Handaxe - Damage: 6 - Cost: 5 gold")
+	 #    print("3) Longsword - Damage: 8 - Cost: 15 gold")
+	 #    print("4) Mace - Damage: 6 - Cost: 5 ")
+	 #    print("5) Quarterstaff - Damage: 6 - Cost: 2")
+	 #    print("6) Warhammer - Damage: 8 - Cost: 15")
+	 #    print("7) Brestplate Armour - Protection: 14 - Cost: 400")
+	 #    choice = input("Choice: ")
+		
+		# if choice == ("0"):
 
+		# 	if Player.gold < 0.1:
+		# 		print("You can't afford it.")
+		# 	else:
+		# 	    Player.inventory.append(Club())
+		# 	    Player.gold -= 0.1
+		# 	    print("You got a Club")
+		# 	    print("")
 
-	choice = input("Choice: ").upper()
+		# elif choice == ("1"):
+		# 	if Player.gold < 2:
+		# 		print("You can't afford it.")
+		# 	else:
+		# 		Player.inventory.append(Dagger())
+		# 		Player.gold -= 2
+		# 		print("You got a Dagger")
+		# 		print("")
 
-	if choice == ("0"):
+		# elif choice == ("2"):
+		# 	if Player.gold < 5:
+		# 		print("You can't afford it.")
+		# 	else:
+		# 		Player.inventory.append(Handaxe())
+		# 		Player.gold -= 5
+		# 		print("You got a Handaxe.")
+		# 		print("")
 
-		if Player.gold < 0.1:
-			print("You can't afford it.")
-		else:
-		    Player.inventory.append(Club())
-		    Player.gold -= 0.1
-		    print("You got a Club")
-		    print("")
+		# elif choice == ("3"):
+		# 	if Player.gold < 15:
+		# 		print("You can't afford it.")
+		# 	else:
+		# 		Player.inventory.append(Longsword())
+		# 		Player.gold -= 15
+		# 		print("You got a Longsword.")
+		# 		print("")
 
-	elif choice == ("1"):
-		if Player.gold < 2:
-			print("You can't afford it.")
-		else:
-			Player.inventory.append(Dagger())
-			Player.gold -= 2
-			print("You got a Dagger")
-			print("")
+		# elif choice == ("4"):
+		# 	if Player.gold < 5:
+		# 		print("You can't afford it.")
+		# 	else:
+		# 		Player.inventory.append(Mace())
+		# 		Player.gold -= 5
+		# 		print("You got a Mace.")
+		# 		print("")
 
-	elif choice == ("2"):
-		if Player.gold < 5:
-			print("You can't afford it.")
-		else:
-			Player.inventory.append(Handaxe())
-			Player.gold -= 5
-			print("You got a Handaxe.")
-			print("")
+		# elif choice == ("5"):
+		# 	if Player.gold < 2:
+		# 		print("You can't afford it.")
+		# 	else:
+		# 		Player.inventory.append(Quarterstaff())
+		# 		Player.gold -= 2
+		# 		print("You got a Quarterstaff.")
+		# 		print("")
 
-	elif choice == ("3"):
-		if Player.gold < 15:
-			print("You can't afford it.")
-		else:
-			Player.inventory.append(Longsword())
-			Player.gold -= 15
-			print("You got a Longsword.")
-			print("")
+		# elif choice == ("6"):
+		# 	if Player.gold < 15:
+		# 		print("You can't afford it.")
+		# 	else:
+		# 		Player.inventory.append(Warhammer())
+		# 		Player.gold -= 15
+		# 		print("You got a Warhammer.")
+		# 		print("")
 
-	elif choice == ("4"):
-		if Player.gold < 5:
-			print("You can't afford it.")
-		else:
-			Player.inventory.append(Mace())
-			Player.gold -= 5
-			print("You got a Mace.")
-			print("")
-
-	elif choice == ("5"):
-		if Player.gold < 2:
-			print("You can't afford it.")
-		else:
-			Player.inventory.append(Quarterstaff())
-			Player.gold -= 2
-			print("You got a Quarterstaff.")
-			print("")
-
-	elif choice == ("6"):
-		if Player.gold < 15:
-			print("You can't afford it.")
-		else:
-			Player.inventory.append(Warhammer())
-			Player.gold -= 15
-			print("You got a Warhammer.")
-			print("")
-
-	elif choice == ("7"):
-		if Player.gold < 400:
-			print("You can't afford it.")
-		else:
-			Player.inventory.append(BrestplateArmour())
-			Player.gold -= 400
-			print("You got a Brestplate Armour")
-			print("")
+		# elif choice == ("7"):
+		# 	if Player.gold < 400:
+		# 		print("You can't afford it.")
+		# 	else:
+		# 		Player.inventory.append(BrestplateArmour())
+		# 		Player.gold -= 400
+		# 		print("You got a Brestplate Armour")
+		# 		print("")
 
 	elif shop_choice == 1:
 		if len(Player.inventory) > 0:
@@ -138,17 +136,26 @@ def ShiningKnight(Player):
 				Weapons = [item for item in Player.inventory if isinstance(item, Weapon)]
 				for i,item in enumerate(Weapons,1):
 					print("{}.{}".format(i,item))
-					weapon_sell_choice = input("Choice: ").upper()
+					weapon_sell_choice = input("Choice: ")
+					Player.inventory = [x for x in Player.inventory if x != weapon_sell_choice]
+					print(f"Your inventory contains:")
+					show_inventory(Player.inventory)
 
 			elif sell_choice == "A":
 				Armours = [item for item in Player.inventory if isinstance(item, Armour)]
 				for i,item in enumerate(Armours,1):
 					print("{}.{}".format(i,item))
+					armour_sell_choice = input("Choice: ")
+					Player.inventory = [x for x in Player.inventory if x != armour_sell_choice]
 
 			elif sell_choice == "V":
 				Valuables = [item for item in Player.inventory if isinstance(item, Valuable)]
 				for i,item in enumerate(Valuables,1):
 					print("{}.{}".format(i,item))
+					valuable_sell_choice = input("Choice: ")
+					valuable_sell_choice = input("Choice: ")
+					Player.inventory = [x for x in Player.inventory if x != valuable_sell_choice]
+
 
 	elif shop_choice == 2:
 		print("")
