@@ -7,6 +7,10 @@
 # Weapon
 # Armour
 # Valuable
+# Ring
+# Amulet
+# Artifact
+
 
 # Weapons
 
@@ -19,6 +23,10 @@ class Weapon:
         
     def __str__(self):
         return "{} - Damage: +{} - Gold value: {} - Type: {} ".format(self.name, self.damage, self.value, self.item_type)
+
+class Sword(Weapon):
+    def __init__(self, name="Sword", damage=5, value=10, item_type="Weapon"):
+        Weapon.__init__(self, name, damage, value, item_type)
 
 class Club(Weapon):
     def __init__(self, name="Club", damage=4, value=0.1, item_type="Weapon"):
@@ -82,6 +90,10 @@ class Armour:
         
     def __str__(self):
         return "{} - Protection: +{} - Gold value: {} - Type: {} ".format(self.name, self.protection, self.value, self.item_type)
+
+class Cloak(Armour):
+    def __init__(self, name="Cloak", protection=6, value=5, item_type="Armour"):
+        Armour.__init__(self, name, protection, value, item_type)
 
 class BrestplateArmour(Armour):
     def __init__(self, name="Brestplate Armour", protection=14, value=400, item_type="Armour"):
@@ -375,6 +387,27 @@ class Ring:
     def __str__(self):
         return "{} - {} - Gold value: {} - Type: {} ".format(self.name, self.description, self.value, self.item_type)
 
+class WeakRingStr(Ring):
+    def __init__(self, name="Weak Ring of Strength",description="You gain a +1 bonus to your strength while wearing this ring.", value=100, item_type="Ring"):
+        Ring.__init__(self, name, description, value, item_type)
+
+class WeakRingDex(Ring):
+    def __init__(self, name="Weak Ring of Dexterity",description="You gain a +1 bonus to your dexterity while wearing this ring.", value=100, item_type="Ring"):
+        Ring.__init__(self, name, description, value, item_type)
+
+class WeakRingInt(Ring):
+    def __init__(self, name="Weak Ring of Intelligence",description="You gain a +1 bonus to your intelligence while wearing this ring.", value=100, item_type="Ring"):
+        Ring.__init__(self, name, description, value, item_type)
+
+class WeakRingCon(Ring):
+    def __init__(self, name="Weak Ring of Constitution",description="You gain a +1 bonus to your constitution while wearing this ring.", value=100, item_type="Ring"):
+        Ring.__init__(self, name, description, value, item_type)
+
+class WeakRingCha(Ring):
+    def __init__(self, name="Weak Ring of Charisma",description="You gain a +2 bonus to your charisma while wearing this ring.", value=100, item_type="Ring"):
+        Ring.__init__(self, name, description, value, item_type)
+
+
 class RingProt(Ring):
     def __init__(self, name="Ring of Protection",description="You gain a +1 bonus to AC while wearing this ring.", value=200, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
@@ -403,6 +436,7 @@ class RingCha(Ring):
     def __init__(self, name="Ring of Charisma",description="You gain a +2 bonus to your charisma while wearing this ring.", value=200, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
 
+
 # Amulets
 
 class Amulet:
@@ -414,6 +448,26 @@ class Amulet:
 
     def __str__(self):
         return "{} - {} - Gold value: {} - Type: {} ".format(self.name, self.description, self.value, self.item_type)
+
+class WeakAmuletStr(Amulet):
+    def __init__(self, name="Weak Amulet of Strength",description="You gain a +1 bonus to your strength while wearing this ring.", value=100, item_type="Amulet"):
+        Amulet.__init__(self, name, description, value, item_type)
+
+class WeakAmuletDex(Amulet):
+    def __init__(self, name="Weak Amulet of Dexterity",description="You gain a +1 bonus to your dexterity while wearing this ring.", value=100, item_type="Amulet"):
+        Amulet.__init__(self, name, description, value, item_type)
+
+class WeakAmuletInt(Amulet):
+    def __init__(self, name="Weak Amulet of Intelligence",description="You gain a +1 bonus to your intelligence while wearing this ring.", value=100, item_type="Amulet"):
+        Amulet.__init__(self, name, description, value, item_type)
+
+class WeakAmuletCon(Amulet):
+    def __init__(self, name="Weak Amulet of Constitution",description="You gain a +1 bonus to your constitution while wearing this ring.", value=100, item_type="Amulet"):
+        Amulet.__init__(self, name, description, value, item_type)
+
+class WeakAmuletCha(Amulet):
+    def __init__(self, name="Weak Amulet of Charisma",description="You gain a +1 bonus to your charisma while wearing this ring.", value=100, item_type="Amulet"):
+        Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletProt(Amulet):
     def __init__(self, name="Amulet of Protection",description="You gain a +1 bonus to AC while wearing this ring.", value=200, item_type="Amulet"):
