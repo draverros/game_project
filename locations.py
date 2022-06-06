@@ -129,7 +129,7 @@ def ShiningKnight(Player):
 
 	elif shop_choice == 1:
 		if len(Player.inventory) > 0:
-			print("What would you like to sell? A weapon(W), an armour(A) or valuables(V)?")
+			print("What would you like to sell? A weapon(W), an armour(A) or other(O)?")
 			sell_choice = input("Choice: ").upper()
 
 			if sell_choice == "W":
@@ -137,25 +137,54 @@ def ShiningKnight(Player):
 				for i,item in enumerate(Weapons,1):
 					print("{}.{}".format(i,item))
 					weapon_sell_choice = input("Choice: ")
-					Player.inventory = [x for x in Player.inventory if x != weapon_sell_choice]
-					print(f"Your inventory contains:")
-					show_inventory(Player.inventory)
+					Player.inventory.remove(Weapons[int(weapon_sell_choice)-1])
+					sell_val = item.value * Player.sell_mod
+					Player.gold += sell_val
+					print(Player.gold)
 
 			elif sell_choice == "A":
 				Armours = [item for item in Player.inventory if isinstance(item, Armour)]
 				for i,item in enumerate(Armours,1):
 					print("{}.{}".format(i,item))
 					armour_sell_choice = input("Choice: ")
-					Player.inventory = [x for x in Player.inventory if x != armour_sell_choice]
+					Player.inventory.remove(Armours[int(armour_sell_choice)-1])
+					sell_val = item.value * Player.sell_mod
+					Player.gold += sell_val
+					print(Player.gold)
 
-			elif sell_choice == "V":
-				Valuables = [item for item in Player.inventory if isinstance(item, Valuable)]
-				for i,item in enumerate(Valuables,1):
-					print("{}.{}".format(i,item))
-					valuable_sell_choice = input("Choice: ")
-					valuable_sell_choice = input("Choice: ")
-					Player.inventory = [x for x in Player.inventory if x != valuable_sell_choice]
+			elif sell_choice == "O":
+				print("Would you like to sell a ring(R), amulet(A) or valuable(V)")
+				other_sell_choice = input("Choice: ").upper()
 
+				if other_sell_choice == "R":
+					Rings = [item for item in Player.inventory if isinstance(item, Ring)]
+					for i,item in enumerate(Rings,1):
+						print("{}.{}".format(i,item))
+						ring_sell_choice = input("Choice: ")
+						Player.inventory.remove(Rings[int(ring_sell_choice)-1])
+						sell_val = item.value * Player.sell_mod
+						Player.gold += sell_val
+						print(Player.gold)
+
+				elif other_sell_choice == "A":
+					Amulets = [item for item in Player.inventory if isinstance(item, Amulet)]
+					for i,item in enumerate(Amulets,1):
+						print("{}.{}".format(i,item))
+						amulet_sell_choice = input("Choice: ")
+						Player.inventory.remove(Amulets[int(amulet_sell_choice)-1])
+						sell_val = item.value * Player.sell_mod
+						Player.gold += sell_val
+						print(Player.gold)
+
+				elif other_sell_choice == "V":
+					Valuables = [item for item in Player.inventory if isinstance(item, Valuable)]
+					for i,item in enumerate(Valuables,1):
+						print("{}.{}".format(i,item))
+						valuable_sell_choice = input("Choice: ")
+						Player.inventory.remove(Valuables[int(valuable_sell_choice)-1])
+						sell_val = item.value * Player.sell_mod
+						Player.gold += sell_val
+						print(Player.gold)
 
 	elif shop_choice == 2:
 		print("")

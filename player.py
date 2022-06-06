@@ -10,9 +10,10 @@ class Player(object):
         self.equipped_ring = RingStr()
         self.equipped_amulet = AmuletStr()
         #self.equipped_artifact = "." 
-        self.inventory = ["test_item", BrestplateArmour(), Longsword(), Aquamarine(), Club(), Azurite(), RingProt(), AmuletProt()]
+        self.inventory = ["Test_item", BrestplateArmour(), Longsword(), Aquamarine(), Club(), Azurite(), RingProt(), AmuletProt()]
         self.gold = 1000
         self.location = ""
+        self.sell_mod = 0.6
 
         # Roll Stats
         self.strength_roll = 0

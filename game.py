@@ -78,7 +78,6 @@ def help_menu():
 myPlayer = player.Player()
 
 
-
 def main_game_loop():
     while myPlayer.game_over is False:
         prompt()
