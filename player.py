@@ -14,6 +14,7 @@ class Player(object):
         self.gold = 1000
         self.location = ""
         self.sell_mod = 0.6
+        self.buy_mod = 1
 
         # Roll Stats
         self.strength_roll = 0

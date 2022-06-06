@@ -1,4 +1,5 @@
 from items import*
 
-weapon_list=[Club(),Dagger()]
-armour_list=[]
+class ShiningSellList(object):
+    def __init__(self):
+    	self.inventory = ["Test", Club(), Dagger(), Handaxe(), Longsword(), Mace(), Quarterstaff(), Warhammer(), BrestplateArmour()]
