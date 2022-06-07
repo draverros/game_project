@@ -27,6 +27,7 @@ class Weapon:
 class Sword(Weapon):
     def __init__(self, name="Sword", damage=5, value=10, item_type="Weapon"):
         Weapon.__init__(self, name, damage, value, item_type)
+        # Shops: Shining
 
 class Club(Weapon):
     def __init__(self, name="Club", damage=4, value=0.1, item_type="Weapon"):

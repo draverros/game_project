@@ -1,6 +1,5 @@
 from items import*
 from player import Player
-import cities
 
 def list_to_text(my_list):
     combined_text = "\n"
@@ -28,19 +27,18 @@ def show_inventory(inventory_list):
             str(i) + ") " + str(uniq_inventory_list[i]) + "(" + str(inventory_list.count(uniq_inventory_list[i]))
             + ")")
 
-city_nev = cities.Neverwinter()
-
 # Neverwinter
 
 # Shining Knight Arms and Armour
 
 def ShiningKnight(Player):
-	while True:
+	while not Player.game_over:
 		print("")
 		print(f"You currently have {Player.gold} gold.")
 		print("")
 
-		ShiningSellList = ["Test", Club(), Dagger(), Handaxe(), Longsword(), Mace(), Quarterstaff(), Warhammer(), BrestplateArmour()]
+		ShiningSellListWeapons = [Club(), Sword(), Dagger(), Handaxe(), Longsword(), Mace(), Quarterstaff(), Warhammer()]
+		ShiningSellListArmours = [Cloak(), BrestplateArmour(), ChainMailArmour(), ChainShirtArmour(), HalfPlateArmour(), HideArmour(), LeatherArmour(), PlateArmour(), RingMailArmour(), ScaleMailArmour(), PaddedArmour(), SplintArmour(), StuddedLeatherArmour()]
 
 		shop_choice = check_menu_range("Welcome, traveller, to the Shining Knight Arms and Armour, "
 		                              "the finest weapons and amour in the whole Neverwinter! Are you buying "
@@ -54,24 +52,52 @@ def ShiningKnight(Player):
 		    buy_shop_choice = input("Choice: ").upper()
 
 		    if buy_shop_choice == "W":
-		    	Weapons_buy = [item for item in ShiningSellList if isinstance(item, Weapon)]
+		    	Weapons_buy = [item for item in ShiningSellListWeapons if isinstance(item, Weapon)]
+
+		    	if not Weapons_buy:
+		    		print("I don't have any weapons to sell!")
+		    		break
+
+		    	print("Which weapon would you like to buy?")
+
 		    	for i,item in enumerate(Weapons_buy,1):
 		    		print("{}.{}".format(i,item))
-		    		weapon_buy_choice = input("Buy: ")
-		    		Player.inventory.append(Weapons_buy[int(weapon_buy_choice)-1])
-		    		buy_val = item.value * Player.buy_mod
-		    		Player.gold -= buy_val
-		    		print(Player.gold)
+		    	valid=False
+		    	while not valid:
+		    		weapon_buy_choice = input("> ")
+		    		try:
+			    		Player.inventory.append(Weapons_buy[int(weapon_buy_choice)-1])
+			    		buy_val = item.value * Player.buy_mod
+			    		Player.gold -= buy_val
+			    		print("You bought a ", Weapons_buy[int(weapon_buy_choice)-1])
+			    		valid = True
+
+			    	except(ValueError,IndexError):
+			    		break
 
 		    if buy_shop_choice == "A":
-		    	Armours_buy = [item for item in ShiningSellList if isinstance(item, Armour)]
+		    	Armours_buy = [item for item in ShiningSellListArmours if isinstance(item, Armour)]
+
+		    	if not Armours_buy:
+		    		print("I don't have any armours to sell!")
+		    		break
+
+		    	print("Which armour would you like to buy?")
+
 		    	for i,item in enumerate(Armours_buy,1):
 		    		print("{}.{}".format(i,item))
-		    		armour_buy_choice = input("Buy: ")
-		    		Player.inventory.append(Armours_buy[int(armour_buy_choice)-1])
-		    		buy_val = item.value * Player.buy_mod
-		    		Player.gold -= buy_val
-		    		print(Player.gold)
+		    	valid=False
+		    	while not valid:
+		    		armour_buy_choice = input("> ")
+		    		try:
+			    		Player.inventory.append(Armours_buy[int(armour_buy_choice)-1])
+			    		buy_val = item.value * Player.buy_mod
+			    		Player.gold -= buy_val
+			    		print("you bought a ", Armours_buy[int(armour_buy_choice)-1])
+			    		valid = True
+
+			    	except(ValueError,IndexError):
+			    		break
 
 		    if buy_shop_choice == "E":
 		    	shop_choice
@@ -151,7 +177,7 @@ def Tarmalune(Player):
 def HouseOfKnowledge(Player):
 	print("House of Knowledge") 
 
-# Shining Serpent Inn - Inn with drinks and a bed to rest
+# Shining Serpent Inn - Inn with drinks(buy one to hear gossip) and a bed to rest (heal)
 def ShiningSerpent(Player):
 	print("Shining Serpent Inn")
 

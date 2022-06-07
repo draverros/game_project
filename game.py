@@ -364,7 +364,7 @@ def setup_game():
     #print(f"Welcome, {player_name}. You are a {player_race}, a {player_profession}.")
 
     while not myPlayer.game_over:
-        choice = check_menu_range("> ", city_nev.neverwinter_menu,)
+        choice = check_menu_range(" ",city_nev.neverwinter_menu,)
 
         def show_inventory(inventory_list):
             if len(inventory_list) < 1:
@@ -398,7 +398,7 @@ def setup_game():
             print(f"You are currently wearing a {myPlayer.equipped_amulet.name}")
             #print(f"You are currently wearing a {myPlayer.equipped_artifact.name}")
             print()
-            print("Would you like to change your weapon(W), armour(A) or other(O)?")
+            print("Would you like to change your weapon(W), armour(A) or other(O)? (Press Enter to leave)")
             choice = input("> ").upper()
             if choice == ("W"):
 
