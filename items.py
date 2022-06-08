@@ -10,6 +10,7 @@
 # Ring
 # Amulet
 # Artifact
+#Potion
 
 
 # Weapons
@@ -510,9 +511,30 @@ class Artifact:
     def __str__(self):
         return "{} - {} - Gold value: {} - Type: {} ".format(self.name, self.description, self.value, self.item_type)
 
+# Potions
 
+class Potion:
+    def __init__(self, name, description, heal, value, item_type):
+        self.name = name
+        self.description = description
+        self.heal = heal
+        self.value = value
+        self.item_type = item_type
 
+    def __str__(self):
+        return "{} - {} - Gold value: {} - Type: {} ".format(self.name, self.description, self.heal, self.value, self.item_type)
 
+class HealPotCommon(Potion):
+    def __init__(self, name="Healing Potion", description="This healing potion restores 10HP", heal=10, value=50, item_type="Potion")
+
+class HealPotGreater(Potion):
+    def __init__(self, name="Greater Healing Potion", description="This healing potion restores 20HP", heal=20, value=200, item_type="Potion")
+
+class HealPotSuperior(Potion):
+    def __init__(self, name="Superior Healing Potion", description="This healing potion restores 10HP", heal=40, value=750, item_type="Potion")
+
+class HealPotSupreme(Potion):
+    def __init__(self, name="Supreme Healing Potion", description="This healing potion restores 10HP", heal=60, value=3500, item_type="Potion")
 
 
 

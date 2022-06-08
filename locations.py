@@ -181,11 +181,11 @@ def HouseOfKnowledge(Player):
 def ShiningSerpent(Player):
 	print("Shining Serpent Inn")
 
-# House of a Thousand Faces - Headquarters of the Harpers
+# House of a Thousand Faces - Headquarters of the Harpers - Quests?
 def HouseOfFaces(Player):
 	print("House of a Thousand Faces")
 
-# Dannar's Mechanical Marvels - artifacts shop
+# Dannar's Mechanical Marvels - Artifacts shop
 def DannarsMechanical(Player):
 	print("Dannar's Mechanical Marvels")
 
