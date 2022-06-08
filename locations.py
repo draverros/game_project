@@ -171,7 +171,7 @@ def ShiningKnight(Player):
 
 # Tarmalune Trade House - shop with valuables and misc
 def Tarmalune(Player):
-	print("Tarmalune Trade House")
+	print("NOT STARTED - Tarmalune Trade House")
 
 # House of Knowledge - Temple to heal wounds for money
 def HouseOfKnowledge(Player):

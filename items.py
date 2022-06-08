@@ -525,16 +525,22 @@ class Potion:
         return "{} - {} - Gold value: {} - Type: {} ".format(self.name, self.description, self.heal, self.value, self.item_type)
 
 class HealPotCommon(Potion):
-    def __init__(self, name="Healing Potion", description="This healing potion restores 10HP", heal=10, value=50, item_type="Potion")
+    def __init__(self, name="Healing Potion", description="This healing potion restores 10HP", heal=10, value=50, item_type="Potion"):
+        Potion.__init__(self, name, description, heal, Valuable, item_type)
 
 class HealPotGreater(Potion):
-    def __init__(self, name="Greater Healing Potion", description="This healing potion restores 20HP", heal=20, value=200, item_type="Potion")
+    def __init__(self, name="Greater Healing Potion", description="This healing potion restores 20HP", heal=20, value=200, item_type="Potion"):
+        Potion.__init__(self, name, description, heal, Valuable, item_type)
 
 class HealPotSuperior(Potion):
-    def __init__(self, name="Superior Healing Potion", description="This healing potion restores 10HP", heal=40, value=750, item_type="Potion")
+    def __init__(self, name="Superior Healing Potion", description="This healing potion restores 10HP", heal=40, value=750, item_type="Potion"):
+        Potion.__init__(self, name, description, heal, Valuable, item_type)
+
 
 class HealPotSupreme(Potion):
-    def __init__(self, name="Supreme Healing Potion", description="This healing potion restores 10HP", heal=60, value=3500, item_type="Potion")
+    def __init__(self, name="Supreme Healing Potion", description="This healing potion restores 10HP", heal=60, value=3500, item_type="Potion"):
+        Potion.__init__(self, name, description, heal, Valuable, item_type)
+
 
 
 
