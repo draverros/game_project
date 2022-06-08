@@ -169,7 +169,7 @@ def ShiningKnight(Player):
 			pass
 			
 
-# Tarmalune Trade House - shop with everything except weapons
+# Tarmalune Trade House - shop with valuables and misc
 def Tarmalune(Player):
 	print("Tarmalune Trade House")
 
