@@ -175,7 +175,35 @@ def Tarmalune(Player):
 
 # House of Knowledge - Temple to heal wounds for money
 def HouseOfKnowledge(Player):
-	print("House of Knowledge") 
+	while not Player.game_over:
+
+		print("")
+		print(f"You currently have {Player.gold} gold.")
+		print(f"You currently have {Player.current_hp} hp")
+		print("")
+		print("Welcome to the House of Knowledge, the temple to Oghma and the great library.")
+		print("What can we help you with?")
+
+		shop_choice = check_menu_range(" ", ["Healing 10 HP (50 gold)", "Blessing", "Curse Removal", "Leave"])
+
+		if shop_choice == 0:
+			heal=10
+			Player.current_hp=min(Player.max_hp,Player.current_hp+heal)
+			Player.gold -= 50
+			print( "Priests use their knowledge and spells to heal you.")
+			print("Your health is", str(Player.current_hp))
+			input("Press any key to continue")
+			
+
+		if shop_choice == 1:
+			print("NOT STARTED - blessing to attributes?")
+
+		if shop_choice == 2:
+			print("NOT STARTED - remove the curse?")
+
+		if shop_choice == 3:
+			break
+
 
 # Shining Serpent Inn - Inn with drinks(buy one to hear gossip) and a bed to rest (heal)
 def ShiningSerpent(Player):

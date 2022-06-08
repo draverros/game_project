@@ -51,8 +51,10 @@ class Player(object):
         self.intelligence = 0
         self.constitution = 0
         self.charisma = 0
-        self.hp = 0
-        self.mp = 0
+        self.max_hp = 0
+        self.current_hp = 0
+        self.max_mp = 0
+        self.current_mp = 0
 
         self.game_over = False
 

@@ -286,8 +286,10 @@ def setup_game():
     # elif myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession == 30:
     #     myPlayer.constitution_mod = 10
 
-    # myPlayer.hp = myPlayer.hp_profession + myPlayer.constitution_mod
-    # myPlayer.mp = 0
+    # myPlayer.current_hp = myPlayer.hp_profession + myPlayer.constitution_mod
+    # myPlayer.max_hp = myPlayer.hp_profession + myPlayer.constitution_mod
+    # myPlayer.current_mp = 0
+    # myPlayer.max_mp = 
 
     # os.system('clear')
     # print(f"Your statistics are:\n")
@@ -362,6 +364,8 @@ def setup_game():
     os.system('clear')
     city_nev = cities.Neverwinter()
     #print(f"Welcome, {player_name}. You are a {player_race}, a {player_profession}.")
+    myPlayer.max_hp = 700
+    myPlayer.current_hp = 10
 
     while not myPlayer.game_over:
         choice = check_menu_range(" ",city_nev.neverwinter_menu,)
@@ -383,7 +387,7 @@ def setup_game():
                   f"Intelligence: {myPlayer.intelligence}\n"
                   f"Constitution: {myPlayer.constitution}\n"
                   f"Charisma: {myPlayer.charisma}\n"
-                  f"HP: {myPlayer.hp}.\n")
+                  f"HP: {myPlayer.current_hp}/{myPlayer.max_hp}.\n")
             print()
 
         elif choice == 1: #Print inventory + change equipement
