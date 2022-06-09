@@ -108,15 +108,28 @@ def ShiningKnight(Player):
 				sell_choice = input("Choice: ").upper()
 
 				if sell_choice == "W":
-					Weapons = [item for item in Player.inventory if isinstance(item, Weapon)]
-					for i,item in enumerate(Weapons,1):
-						print("{}.{}".format(i,item))
+					Weapons_sell  = [item for item in Player.inventory if isinstance(item, Weapon)]
 
-						weapon_sell_choice = input("Choice: ")
-						Player.inventory.remove(Weapons[int(weapon_sell_choice)-1])
-						sell_val = item.value * Player.sell_mod
-						Player.gold += round(sell_val, 2)
-						print(Player.gold)
+					if not Weapons_sell:
+						print("You don't have any weapons to sell.")
+						break
+
+					print("Which weapon would you like to sell?")
+
+					for i,item in enumerate(Weapons_sell,1):
+						print("{}.{}".format(i,item))
+					valid=False
+					while not valid:
+						weapon_sell_choice = input("> ")
+						try:
+							Player.inventory.remove(Weapons_sell[int(weapon_sell_choice)-1])
+							sell_val = item.value * Player.sell_mod
+							Player.gold += round(sell_val, 2)
+							print("You sold a ", Weapons_sell[int(weapon_sell_choice)-1])
+							valid = True
+
+						except(ValueError,IndexError):
+							break
 
 				elif sell_choice == "A":
 					Armours = [item for item in Player.inventory if isinstance(item, Armour)]

@@ -373,64 +373,65 @@ def setup_game():
     myPlayer.current_hp = 10
     myPlayer.max_mp = 100
     myPlayer.current_mp = 10
-    myPlayer.charisma = 20
+    myPlayer.charisma = 25
 
     if myPlayer.charisma == 15:
-        myPlayer.sell_mod = 1
+        myPlayer.buy_mod = 1
+        myPlayer.buy_mod = 
 
     elif myPlayer.charisma == 14:
-        myPlayer.sell_mod = 0.95
+        myPlayer.buy_mod = 0.95
 
     elif myPlayer.charisma == 13:
-        myPlayer.sell_mod = 0.9
+        myPlayer.buy_mod = 0.9
 
     elif myPlayer.charisma == 12:
-        myPlayer.sell_mod = 0.85
+        myPlayer.buy_mod = 0.85
 
     elif myPlayer.charisma == 11:
-        myPlayer.sell_mod = 0.8
+        myPlayer.buy_mod = 0.8
 
     elif myPlayer.charisma == 10:
-        myPlayer.sell_mod = 0.75
+        myPlayer.buy_mod = 0.75
 
     elif myPlayer.charisma == 9:
-        myPlayer.sell_mod = 0.7
+        myPlayer.buy_mod = 0.7
 
     elif myPlayer.charisma == 8:
-        myPlayer.sell_mod = 0.65
+        myPlayer.buy_mod = 0.65
 
     elif myPlayer.charisma <= 7:
-        myPlayer.sell_mod = 0.6
+        myPlayer.buy_mod = 0.6
 
     elif myPlayer.charisma == 16:
-        myPlayer.sell_mod = 1.05
+        myPlayer.buy_mod = 1.05
 
     elif myPlayer.charisma == 17:
-        myPlayer.sell_mod = 1.1
+        myPlayer.buy_mod = 1.1
 
     elif myPlayer.charisma == 18:
-        myPlayer.sell_mod = 1.15
+        myPlayer.buy_mod = 1.15
 
     elif myPlayer.charisma == 19:
-        myPlayer.sell_mod = 1.2
+        myPlayer.buy_mod = 1.2
 
     elif myPlayer.charisma == 20:
-        myPlayer.sell_mod = 1.25
+        myPlayer.buy_mod = 1.25
 
     elif myPlayer.charisma == 21:
-        myPlayer.sell_mod = 1.3
+        myPlayer.buy_mod = 1.3
 
     elif myPlayer.charisma == 22:
-        myPlayer.sell_mod = 1.35
+        myPlayer.buy_mod = 1.35
 
     elif myPlayer.charisma == 23:
-        myPlayer.sell_mod = 1.4
+        myPlayer.buy_mod = 1.4
 
     elif myPlayer.charisma == 24:
-        myPlayer.sell_mod = 1.45
+        myPlayer.buy_mod = 1.45
 
     elif myPlayer.charisma >= 25:
-        myPlayer.sell_mod = 1.5
+        myPlayer.buy_mod = 1.5
 
     while not myPlayer.game_over:
         choice = check_menu_range(" ",city_nev.neverwinter_menu,)

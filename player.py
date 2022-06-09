@@ -14,8 +14,8 @@ class Player(object):
         self.inventory = [BrestplateArmour(), Longsword(), Aquamarine(), Club(), Azurite(), RingProt(), AmuletProt()]
         self.gold = 1000
         self.location = ""
-        self.sell_mod = 0.6
-        self.buy_mod = 1
+        self.sell_mod = 0
+        self.buy_mod = 0
 
         # Roll Stats
         self.strength_roll = 0
