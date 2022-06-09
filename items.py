@@ -452,51 +452,51 @@ class Amulet:
         return "{} - {} - Gold value: {} - Type: {} ".format(self.name, self.description, self.value, self.item_type)
 
 class WeakAmuletStr(Amulet):
-    def __init__(self, name="Weak Amulet of Strength",description="You gain a +1 bonus to your strength while wearing this ring.", value=100, item_type="Amulet"):
+    def __init__(self, name="Weak Amulet of Strength",description="You gain a +1 bonus to your strength while wearing this amulet.", value=100, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class WeakAmuletDex(Amulet):
-    def __init__(self, name="Weak Amulet of Dexterity",description="You gain a +1 bonus to your dexterity while wearing this ring.", value=100, item_type="Amulet"):
+    def __init__(self, name="Weak Amulet of Dexterity",description="You gain a +1 bonus to your dexterity while wearing this amulet.", value=100, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class WeakAmuletInt(Amulet):
-    def __init__(self, name="Weak Amulet of Intelligence",description="You gain a +1 bonus to your intelligence while wearing this ring.", value=100, item_type="Amulet"):
+    def __init__(self, name="Weak Amulet of Intelligence",description="You gain a +1 bonus to your intelligence while wearing this amulet.", value=100, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class WeakAmuletCon(Amulet):
-    def __init__(self, name="Weak Amulet of Constitution",description="You gain a +1 bonus to your constitution while wearing this ring.", value=100, item_type="Amulet"):
+    def __init__(self, name="Weak Amulet of Constitution",description="You gain a +1 bonus to your constitution while wearing this amulet.", value=100, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class WeakAmuletCha(Amulet):
-    def __init__(self, name="Weak Amulet of Charisma",description="You gain a +1 bonus to your charisma while wearing this ring.", value=100, item_type="Amulet"):
+    def __init__(self, name="Weak Amulet of Charisma",description="You gain a +1 bonus to your charisma while wearing this amulet.", value=100, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletProt(Amulet):
-    def __init__(self, name="Amulet of Protection",description="You gain a +1 bonus to AC while wearing this ring.", value=200, item_type="Amulet"):
+    def __init__(self, name="Amulet of Protection",description="You gain a +1 bonus to AC while wearing this amulet.", value=200, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletLife(Amulet):
-    def __init__(self, name="Amulet of Life",description="You gain a 10 bonus to health while wearing this ring.", value=200, item_type="Amulet"):
+    def __init__(self, name="Amulet of Life",description="You gain a 10 bonus to health while wearing this amulet.", value=200, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletStr(Amulet):
-    def __init__(self, name="Amulet of Strength",description="You gain a +2 bonus to your strength while wearing this ring.", value=200, item_type="Amulet"):
+    def __init__(self, name="Amulet of Strength",description="You gain a +2 bonus to your strength while wearing this amulet.", value=200, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletDex(Amulet):
-    def __init__(self, name="Amulet of Dexterity",description="You gain a +2 bonus to your dexterity while wearing this ring.", value=200, item_type="Amulet"):
+    def __init__(self, name="Amulet of Dexterity",description="You gain a +2 bonus to your dexterity while wearing this amulet.", value=200, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletInt(Amulet):
-    def __init__(self, name="Amulet of Intelligence",description="You gain a +2 bonus to your intelligence while wearing this ring.", value=200, item_type="Amulet"):
+    def __init__(self, name="Amulet of Intelligence",description="You gain a +2 bonus to your intelligence while wearing this amulet.", value=200, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletCon(Amulet):
-    def __init__(self, name="Amulet of Constitution",description="You gain a +2 bonus to your constitution while wearing this ring.", value=200, item_type="Amulet"):
+    def __init__(self, name="Amulet of Constitution",description="You gain a +2 bonus to your constitution while wearing this amulet.", value=200, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletCha(Amulet):
-    def __init__(self, name="Amulet of Charisma",description="You gain a +2 bonus to your charisma while wearing this ring.", value=200, item_type="Amulet"):
+    def __init__(self, name="Amulet of Charisma",description="You gain a +2 bonus to your charisma while wearing this amulet.", value=200, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 # Artifacts
@@ -533,12 +533,12 @@ class HealPotGreater(Potion):
         Potion.__init__(self, name, description, heal, Valuable, item_type)
 
 class HealPotSuperior(Potion):
-    def __init__(self, name="Superior Healing Potion", description="This healing potion restores 10HP", heal=40, value=750, item_type="Potion"):
+    def __init__(self, name="Superior Healing Potion", description="This healing potion restores 40HP", heal=40, value=750, item_type="Potion"):
         Potion.__init__(self, name, description, heal, Valuable, item_type)
 
 
 class HealPotSupreme(Potion):
-    def __init__(self, name="Supreme Healing Potion", description="This healing potion restores 10HP", heal=60, value=3500, item_type="Potion"):
+    def __init__(self, name="Supreme Healing Potion", description="This healing potion restores 60HP", heal=60, value=3500, item_type="Potion"):
         Potion.__init__(self, name, description, heal, Valuable, item_type)
 
 
