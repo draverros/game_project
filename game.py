@@ -377,7 +377,6 @@ def setup_game():
 
     if myPlayer.charisma == 15:
         myPlayer.buy_mod = 1
-        myPlayer.buy_mod = 
 
     elif myPlayer.charisma == 14:
         myPlayer.buy_mod = 0.95

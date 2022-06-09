@@ -132,48 +132,103 @@ def ShiningKnight(Player):
 							break
 
 				elif sell_choice == "A":
-					Armours = [item for item in Player.inventory if isinstance(item, Armour)]
-					for i,item in enumerate(Armours,1):
+					Armours_sell = [item for item in Player.inventory if isinstance(item, Armour)]
+
+					if not Armours_sell:
+						print("You don't have any armours to sell.")
+						break
+
+					print("Which armour would you like to sell?")
+
+					for i,item in enumerate(Armours_sell,1):
 						print("{}.{}".format(i,item))
-						armour_sell_choice = input("Choice: ")
-						Player.inventory.remove(Armours[int(armour_sell_choice)-1])
-						sell_val = item.value * Player.sell_mod
-						Player.gold += round(sell_val, 2)
-						print(Player.gold)
+					valid=False
+					while not valid:
+						armour_sell_choice = input("> ")
+						try:
+							Player.inventory.remove(Armours_sell[int(armour_sell_choice)-1])
+							sell_val = item.value * Player.sell_mod
+							Player.gold += round(sell_val, 2)
+							print("You sold a ", Armours_sell[int(armour_sell_choice)-1])
+							valid = True
+
+						except(ValueError,IndexError):
+							break
 
 				elif sell_choice == "O":
 					print("Would you like to sell a ring(R), amulet(A) or valuable(V)")
 					other_sell_choice = input("Choice: ").upper()
 
 					if other_sell_choice == "R":
-						Rings = [item for item in Player.inventory if isinstance(item, Ring)]
-						for i,item in enumerate(Rings,1):
+						Rings_sell = [item for item in Player.inventory if isinstance(item, Ring)]
+
+						if not Rings_sell:
+							print("You don't have any rings to sell.")
+							break
+
+						print("Which ring would you like to sell?")
+
+						for i,item in enumerate(Rings_sell,1):
 							print("{}.{}".format(i,item))
-							ring_sell_choice = input("Choice: ")
-							Player.inventory.remove(Rings[int(ring_sell_choice)-1])
-							sell_val = item.value * Player.sell_mod
-							Player.gold += round(sell_val, 2)
-							print(Player.gold)
+						valid=False
+						while not valid:
+							ring_sell_choice = input("> ")
+							try:
+								Player.inventory.remove(Rings_sell[int(ring_sell_choice)-1])
+								sell_val = item.value * Player.sell_mod
+								Player.gold += round(sell_val, 2)
+								print("You sold a ", Rings_sell[int(ring_sell_choice)-1])
+								valid = True
+
+							except(ValueError,IndexError):
+								break
 
 					elif other_sell_choice == "A":
-						Amulets = [item for item in Player.inventory if isinstance(item, Amulet)]
-						for i,item in enumerate(Amulets,1):
+						Amulets_sell = [item for item in Player.inventory if isinstance(item, Amulet)]
+
+						if not Amulets_sell:
+							print("You don't have any amulets to sell.")
+							break
+
+						print("Which amulet would you like to sell?")
+
+						for i,item in enumerate(Amulets_sell,1):
 							print("{}.{}".format(i,item))
-							amulet_sell_choice = input("Choice: ")
-							Player.inventory.remove(Amulets[int(amulet_sell_choice)-1])
-							sell_val = item.value * Player.sell_mod
-							Player.gold += round(sell_val, 2)
-							print(Player.gold)
+						valid=False
+						while not valid:
+							amulet_sell_choice = input("> ")
+							try:
+								Player.inventory.remove(Amulets_sell[int(amulet_sell_choice)-1])
+								sell_val = item.value * Player.sell_mod
+								Player.gold += round(sell_val, 2)
+								print("You sold a ", Amulets_sell[int(amulet_sell_choice)-1])
+								valid = True
+
+							except(ValueError,IndexError):
+								break
 
 					elif other_sell_choice == "V":
-						Valuables = [item for item in Player.inventory if isinstance(item, Valuable)]
-						for i,item in enumerate(Valuables,1):
+						Valuables_sell = [item for item in Player.inventory if isinstance(item, Valuable)]
+
+						if not Valuables_sell:
+							print("You don't have any valuables to sell.")
+							break
+
+						print("Which item would you like to sell?")
+
+						for i,item in enumerate(Valuables_sell,1):
 							print("{}.{}".format(i,item))
-							valuable_sell_choice = input("Choice: ")
-							Player.inventory.remove(Valuables[int(valuable_sell_choice)-1])
-							sell_val = item.value * Player.sell_mod
-							Player.gold += round(sell_val, 2)
-							print(Player.gold)
+						valid=False
+						while not valid:
+							valuable_sell_choice = input("> ")
+							try:
+								Player.inventory.remove(Valuables_sell[int(valuable_sell_choice)-1])
+								sell_val = item.value * Player.sell_mod
+								Player.gold += round(sell_val, 2)
+								print("You sold a ", Valuables_sell[int(valuable_sell_choice)-1])
+
+							except(ValueError,IndexError):
+								break
 
 		elif shop_choice == 2:
 			break
