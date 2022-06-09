@@ -6,6 +6,7 @@ from items import*
 import monsters
 import locations
 import lists
+from spells import*
 
 import random
 import sys
@@ -28,7 +29,7 @@ def title_screen_selections():
         if option.lower() == "play":
             setup_game()
         elif option.lower() == "help":
-            help_menu()  # placeholder
+            help_menu()
         elif option.lower() == "quit":
             sys.exit()
 
@@ -289,7 +290,7 @@ def setup_game():
     # myPlayer.current_hp = myPlayer.hp_profession + myPlayer.constitution_mod
     # myPlayer.max_hp = myPlayer.hp_profession + myPlayer.constitution_mod
     # myPlayer.current_mp = 0
-    # myPlayer.max_mp = 
+    # myPlayer.max_mp = 100
 
     # os.system('clear')
     # print(f"Your statistics are:\n")
@@ -361,11 +362,75 @@ def setup_game():
     #     elif player_reroll.lower() == "no":
     #         ask_again = False
 
+
+
+
+
     os.system('clear')
     city_nev = cities.Neverwinter()
     #print(f"Welcome, {player_name}. You are a {player_race}, a {player_profession}.")
     myPlayer.max_hp = 700
     myPlayer.current_hp = 10
+    myPlayer.max_mp = 100
+    myPlayer.current_mp = 10
+    myPlayer.charisma = 20
+
+    if myPlayer.charisma == 15:
+        myPlayer.sell_mod = 1
+
+    elif myPlayer.charisma == 14:
+        myPlayer.sell_mod = 0.95
+
+    elif myPlayer.charisma == 13:
+        myPlayer.sell_mod = 0.9
+
+    elif myPlayer.charisma == 12:
+        myPlayer.sell_mod = 0.85
+
+    elif myPlayer.charisma == 11:
+        myPlayer.sell_mod = 0.8
+
+    elif myPlayer.charisma == 10:
+        myPlayer.sell_mod = 0.75
+
+    elif myPlayer.charisma == 9:
+        myPlayer.sell_mod = 0.7
+
+    elif myPlayer.charisma == 8:
+        myPlayer.sell_mod = 0.65
+
+    elif myPlayer.charisma <= 7:
+        myPlayer.sell_mod = 0.6
+
+    elif myPlayer.charisma == 16:
+        myPlayer.sell_mod = 1.05
+
+    elif myPlayer.charisma == 17:
+        myPlayer.sell_mod = 1.1
+
+    elif myPlayer.charisma == 18:
+        myPlayer.sell_mod = 1.15
+
+    elif myPlayer.charisma == 19:
+        myPlayer.sell_mod = 1.2
+
+    elif myPlayer.charisma == 20:
+        myPlayer.sell_mod = 1.25
+
+    elif myPlayer.charisma == 21:
+        myPlayer.sell_mod = 1.3
+
+    elif myPlayer.charisma == 22:
+        myPlayer.sell_mod = 1.35
+
+    elif myPlayer.charisma == 23:
+        myPlayer.sell_mod = 1.4
+
+    elif myPlayer.charisma == 24:
+        myPlayer.sell_mod = 1.45
+
+    elif myPlayer.charisma >= 25:
+        myPlayer.sell_mod = 1.5
 
     while not myPlayer.game_over:
         choice = check_menu_range(" ",city_nev.neverwinter_menu,)
@@ -387,7 +452,11 @@ def setup_game():
                   f"Intelligence: {myPlayer.intelligence}\n"
                   f"Constitution: {myPlayer.constitution}\n"
                   f"Charisma: {myPlayer.charisma}\n"
-                  f"HP: {myPlayer.current_hp}/{myPlayer.max_hp}.\n")
+                  f"HP: {myPlayer.current_hp}/{myPlayer.max_hp}\n"
+                  f"MP: {myPlayer.current_mp}/{myPlayer.max_mp}\n"
+                  f"BuyMod: {myPlayer.buy_mod}\n"
+                  f"BuyMod: {myPlayer.sell_mod}\n")
+
             print()
 
         elif choice == 1: #Print inventory + change equipement
@@ -517,10 +586,8 @@ def setup_game():
                             print("Invalid choice, try again ")
 
 
-
-
         elif choice == 2:
-                locations.ShiningKnight(myPlayer)
+            locations.ShiningKnight(myPlayer)
 
         elif choice == 3:
             locations.Tarmalune(myPlayer)

@@ -68,7 +68,7 @@ def ShiningKnight(Player):
 		    		try:
 			    		Player.inventory.append(Weapons_buy[int(weapon_buy_choice)-1])
 			    		buy_val = item.value * Player.buy_mod
-			    		Player.gold -= buy_val
+			    		Player.gold -= round(buy_val, 2)
 			    		print("You bought a ", Weapons_buy[int(weapon_buy_choice)-1])
 			    		valid = True
 
@@ -92,7 +92,7 @@ def ShiningKnight(Player):
 		    		try:
 			    		Player.inventory.append(Armours_buy[int(armour_buy_choice)-1])
 			    		buy_val = item.value * Player.buy_mod
-			    		Player.gold -= buy_val
+			    		Player.gold -= round(buy_val, 2)
 			    		print("you bought a ", Armours_buy[int(armour_buy_choice)-1])
 			    		valid = True
 
@@ -115,7 +115,7 @@ def ShiningKnight(Player):
 						weapon_sell_choice = input("Choice: ")
 						Player.inventory.remove(Weapons[int(weapon_sell_choice)-1])
 						sell_val = item.value * Player.sell_mod
-						Player.gold += sell_val
+						Player.gold += round(sell_val, 2)
 						print(Player.gold)
 
 				elif sell_choice == "A":
@@ -125,7 +125,7 @@ def ShiningKnight(Player):
 						armour_sell_choice = input("Choice: ")
 						Player.inventory.remove(Armours[int(armour_sell_choice)-1])
 						sell_val = item.value * Player.sell_mod
-						Player.gold += sell_val
+						Player.gold += round(sell_val, 2)
 						print(Player.gold)
 
 				elif sell_choice == "O":
@@ -139,7 +139,7 @@ def ShiningKnight(Player):
 							ring_sell_choice = input("Choice: ")
 							Player.inventory.remove(Rings[int(ring_sell_choice)-1])
 							sell_val = item.value * Player.sell_mod
-							Player.gold += sell_val
+							Player.gold += round(sell_val, 2)
 							print(Player.gold)
 
 					elif other_sell_choice == "A":
@@ -149,7 +149,7 @@ def ShiningKnight(Player):
 							amulet_sell_choice = input("Choice: ")
 							Player.inventory.remove(Amulets[int(amulet_sell_choice)-1])
 							sell_val = item.value * Player.sell_mod
-							Player.gold += sell_val
+							Player.gold += round(sell_val, 2)
 							print(Player.gold)
 
 					elif other_sell_choice == "V":
@@ -159,7 +159,7 @@ def ShiningKnight(Player):
 							valuable_sell_choice = input("Choice: ")
 							Player.inventory.remove(Valuables[int(valuable_sell_choice)-1])
 							sell_val = item.value * Player.sell_mod
-							Player.gold += sell_val
+							Player.gold += round(sell_val, 2)
 							print(Player.gold)
 
 		elif shop_choice == 2:
@@ -207,7 +207,33 @@ def HouseOfKnowledge(Player):
 
 # Shining Serpent Inn - Inn with drinks(buy one to hear gossip) and a bed to rest (heal)
 def ShiningSerpent(Player):
-	print("Shining Serpent Inn")
+	while not Player.game_over:
+
+		print("")
+		print(f"You currently have {Player.gold} gold.")
+		print(f"You currently have {Player.current_hp} hp")
+		print("")
+		print("Welcome to the Shining Serpent, the best inn the whole of Neverwinter.")
+		print("What can we help you with?")
+
+		shop_choice = check_menu_range(" ", ["Buy a drink (10 gold)", "Rest (100 gold)", "Leave"])
+
+		if shop_choice == 0:
+			print("Not ready yet")
+
+		if shop_choice == 1:
+			heal=10000
+			Player.current_hp=min(Player.max_hp,Player.current_hp+heal)
+			Player.current_mp=min(Player.max_mp,Player.current_mp+heal)
+			Player.gold -= 100
+			print("You go to bed and wake up refreshed.")
+			print("Your health is now", str(Player.current_hp))
+			print("Your mana is now", str(Player.current_mp))
+			input("Press any key to continue")
+
+		if shop_choice == 2:
+			break
+
 
 # House of a Thousand Faces - Headquarters of the Harpers - Quests?
 def HouseOfFaces(Player):
