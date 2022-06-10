@@ -167,7 +167,7 @@ def setup_game():
     # myPlayer.constitution_roll = random.randint(8, 18)
     # myPlayer.charisma_roll = random.randint(8, 18)
     
-    # # Player starting equipement
+    # # Player starting equipment
     # if myPlayer.profession == 'fighter':
     #     myPlayer.equipped_weapon = Sword()
     #     myPlayer.equipped_armour = LeatherArmour()
@@ -215,7 +215,7 @@ def setup_game():
     #     myPlayer.dexterity_profession = 2
     #     myPlayer.intelligence_profession = 0
     #     myPlayer.constitution_profession = 0
-    #     myPlayer.charsma_profession = 0
+    #     myPlayer.charisma_profession = 0
     #     myPlayer.hp_profession = 8
     #     myPlayer.mp_profession = 0
     # elif myPlayer.profession == 'wizard':
@@ -223,7 +223,7 @@ def setup_game():
     #     myPlayer.dexterity_profession = 0
     #     myPlayer.intelligence_profession = 2
     #     myPlayer.constitution_profession = 0
-    #     myPlayer.charsma_profession = 0
+    #     myPlayer.charisma_profession = 0
     #     myPlayer.hp_profession = 6
     #     myPlayer.mp_profession = 0
 

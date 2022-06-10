@@ -1,5 +1,3 @@
-
-
 # adding subclass so that in future each weapon can potentially have
 # unique function
 
