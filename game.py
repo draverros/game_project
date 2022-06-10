@@ -1,5 +1,11 @@
 from tracemalloc import start
 from click import prompt
+
+import random
+import sys
+import os
+import time
+
 import cities
 import player
 from items import*
@@ -7,12 +13,6 @@ import monsters
 import locations
 import lists
 from spells import*
-
-import random
-import sys
-import os
-import time
-
 
 # Title Screen #
 def title_screen_selections():
@@ -193,7 +193,6 @@ def setup_game():
     #     myPlayer.equipped_amulet = WeakAmuletInt()
     #     myPlayer.gold = 60
 
-
     # # Player Class Stats
     # if myPlayer.profession == 'fighter':
     #     myPlayer.strength_profession = 2
@@ -319,9 +318,10 @@ def setup_game():
 
     #         myPlayer.strength = myPlayer.strength_roll + myPlayer.strength_profession + myPlayer.strength_race
     #         myPlayer.dexterity = myPlayer.dexterity_roll + myPlayer.dexterity_profession + myPlayer.dexterity_race
-    #         myPlayer.intelligence = myPlayer.intelligence_roll + myPlayer.intelligence_profession + myPlayer.intelligence_race
-    #         myPlayer.constitution = myPlayer.constitution_roll + myPlayer.constitution_profession + myPlayer.constitution_race
-    #         myPlayer.charisma = myPlayer.charisma_roll + myPlayer.charisma_profession + myPlayer.charisma_race
+    #         myPlayer.intelligence = myPlayer.intelligence_roll + myPlayer.intelligence_profession +
+    #         myPlayer.intelligence_race myPlayer.constitution = myPlayer.constitution_roll +
+    #         myPlayer.constitution_profession + myPlayer.constitution_race myPlayer.charisma = myPlayer.charisma_roll +
+    #         myPlayer.charisma_profession + myPlayer.charisma_race
 
     #         if myPlayer.constitution_roll + myPlayer.constitution_race + myPlayer.constitution_profession < 10:
     #             myPlayer.constitution_mod = -1
@@ -362,78 +362,93 @@ def setup_game():
     #     elif player_reroll.lower() == "no":
     #         ask_again = False
 
-
-
-
-
     os.system('clear')
     city_nev = cities.Neverwinter()
-    #print(f"Welcome, {player_name}. You are a {player_race}, a {player_profession}.")
+    # print(f"Welcome, {player_name}. You are a {player_race}, a {player_profession}.")
     myPlayer.max_hp = 700
     myPlayer.current_hp = 10
     myPlayer.max_mp = 100
     myPlayer.current_mp = 10
-    myPlayer.charisma = 25
+    myPlayer.charisma = 20
 
     if myPlayer.charisma == 15:
         myPlayer.buy_mod = 1
+        myPlayer.sell_mod = 0.6
 
     elif myPlayer.charisma == 14:
-        myPlayer.buy_mod = 0.95
+        myPlayer.buy_mod = 1.05
+        myPlayer.sell_mod = 0.55
 
     elif myPlayer.charisma == 13:
-        myPlayer.buy_mod = 0.9
+        myPlayer.buy_mod = 1.1
+        myPlayer.sell_mod = 0.5
 
     elif myPlayer.charisma == 12:
-        myPlayer.buy_mod = 0.85
+        myPlayer.buy_mod = 1.15
+        myPlayer.sell_mod = 0.45
 
     elif myPlayer.charisma == 11:
-        myPlayer.buy_mod = 0.8
+        myPlayer.buy_mod = 1.2
+        myPlayer.sell_mod = 0.4
 
     elif myPlayer.charisma == 10:
-        myPlayer.buy_mod = 0.75
+        myPlayer.buy_mod = 1.25
+        myPlayer.sell_mod = 0.35
 
     elif myPlayer.charisma == 9:
-        myPlayer.buy_mod = 0.7
+        myPlayer.buy_mod = 1.3
+        myPlayer.sell_mod = 0.3
 
     elif myPlayer.charisma == 8:
-        myPlayer.buy_mod = 0.65
+        myPlayer.buy_mod = 1.35
+        myPlayer.sell_mod = 0.25
 
     elif myPlayer.charisma <= 7:
-        myPlayer.buy_mod = 0.6
+        myPlayer.buy_mod = 1.4
+        myPlayer.sell_mod = 0.2
 
     elif myPlayer.charisma == 16:
-        myPlayer.buy_mod = 1.05
+        myPlayer.buy_mod = 0.95
+        myPlayer.sell_mod = 0.65
 
     elif myPlayer.charisma == 17:
-        myPlayer.buy_mod = 1.1
+        myPlayer.buy_mod = 0.9
+        myPlayer.sell_mod = 0.7
 
     elif myPlayer.charisma == 18:
-        myPlayer.buy_mod = 1.15
+        myPlayer.buy_mod = 0.85
+        myPlayer.sell_mod = 0.75
 
     elif myPlayer.charisma == 19:
-        myPlayer.buy_mod = 1.2
+        myPlayer.buy_mod = 0.80
+        myPlayer.sell_mod = 0.8
 
     elif myPlayer.charisma == 20:
-        myPlayer.buy_mod = 1.25
+        myPlayer.buy_mod = 0.75
+        myPlayer.sell_mod = 0.85
 
     elif myPlayer.charisma == 21:
-        myPlayer.buy_mod = 1.3
+        myPlayer.buy_mod = 0.7
+        myPlayer.sell_mod = 0.9
 
     elif myPlayer.charisma == 22:
-        myPlayer.buy_mod = 1.35
+        myPlayer.buy_mod = 0.65
+        myPlayer.sell_mod = 0.95
 
     elif myPlayer.charisma == 23:
-        myPlayer.buy_mod = 1.4
+        myPlayer.buy_mod = 0.6
+        myPlayer.sell_mod = 1
 
     elif myPlayer.charisma == 24:
-        myPlayer.buy_mod = 1.45
+        myPlayer.buy_mod = 0.55
+        myPlayer.sell_mod = 1.05
 
     elif myPlayer.charisma >= 25:
-        myPlayer.buy_mod = 1.5
+        myPlayer.buy_mod = 0.5
+        myPlayer.sell_mod = 1.1
 
     while not myPlayer.game_over:
-        choice = check_menu_range(" ",city_nev.neverwinter_menu,)
+        choice = check_menu_range(" ", city_nev.neverwinter_menu,)
 
         def show_inventory(inventory_list):
             if len(inventory_list) < 1:
@@ -442,10 +457,11 @@ def setup_game():
             uniq_inventory_list = list(set(inventory_list))
             for i in range(len(uniq_inventory_list)):
                 print(
-                    str(i) + ") " + str(uniq_inventory_list[i]) + "(" + str(inventory_list.count(uniq_inventory_list[i]))
+                    str(i) + ") " + str(uniq_inventory_list[i]) + "("
+                    + str(inventory_list.count(uniq_inventory_list[i]))
                     + ")")
 
-        if choice == 0: # Print statistics
+        if choice == 0:  # Print statistics
             print(f"Your statistics are:\n")
             print(f"Strength: {myPlayer.strength}\n"
                   f"Dexterity: {myPlayer.dexterity}\n"
@@ -455,11 +471,11 @@ def setup_game():
                   f"HP: {myPlayer.current_hp}/{myPlayer.max_hp}\n"
                   f"MP: {myPlayer.current_mp}/{myPlayer.max_mp}\n"
                   f"BuyMod: {myPlayer.buy_mod}\n"
-                  f"BuyMod: {myPlayer.sell_mod}\n")
+                  f"SellMod: {myPlayer.sell_mod}\n")
 
             print()
 
-        elif choice == 1: #Print inventory + change equipement
+        elif choice == 1:  # Print inventory + change equipment
             print(f"Your inventory contains:")
             show_inventory(myPlayer.inventory)
             print()
@@ -469,152 +485,152 @@ def setup_game():
             print(f"Your armour is {myPlayer.equipped_armour.name}")
             print(f"You are currently wearing a {myPlayer.equipped_ring.name}")
             print(f"You are currently wearing a {myPlayer.equipped_amulet.name}")
-            #print(f"You are currently wearing a {myPlayer.equipped_artifact.name}")
+            # print(f"You are currently wearing a {myPlayer.equipped_artifact.name}")
             print()
             print("Would you like to change your weapon(W), armour(A) or other(O)? (Press Enter to leave)")
             choice = input("> ").upper()
-            if choice == ("W"):
+            if choice == "W":
 
-                Weapons = [item for item in myPlayer.inventory if isinstance (item, Weapon)]
+                weapons = [item for item in myPlayer.inventory if isinstance(item, Weapon)]
 
-                if not Weapons:
+                if not weapons:
                     print("You have no weapons to equip.")
                     break
 
                 print("Choose a weapon to equip: ")
 
-                for i,item in enumerate(Weapons,1):
-                    print("{}. {}".format(i,item))
+                for i, item in enumerate(weapons, 1):
+                    print("{}. {}".format(i, item))
 
                 valid = False
                 while not valid:
                     choice = input("> ")
                     try:
-                        bob=myPlayer.equipped_weapon # fix bug that replicate item if error
-                        myPlayer.inventory.remove(Weapons[int(choice)-1])
-                        myPlayer.equipped_weapon=Weapons[int(choice)-1]
+                        bob = myPlayer.equipped_weapon  # fix bug that replicate item if error
+                        myPlayer.inventory.remove(weapons[int(choice)-1])
+                        myPlayer.equipped_weapon = weapons[int(choice)-1]
                         myPlayer.inventory.append(bob)
-                        print("You arm yourself with :",Weapons[int(choice)-1])
-                        valid=True
+                        print("You arm yourself with :", weapons[int(choice)-1])
+                        valid = True
 
-                    except (ValueError,IndexError):
+                    except (ValueError, IndexError):
                         print("Invalid choice, try again ")
 
-            elif choice == ("A"):
+            elif choice == "A":
 
-                Armours = [item for item in myPlayer.inventory if isinstance(item, Armour)]
+                armours = [item for item in myPlayer.inventory if isinstance(item, Armour)]
 
-                if not Armours:
+                if not armours:
                     print("You have no armour to equip.")
                     break
 
                 print("Choose the armour to equip: ")
 
-                for i,item in enumerate(Armours,1):
-                    print("{}.{}".format(i,item))
+                for i, item in enumerate(armours, 1):
+                    print("{}.{}".format(i, item))
 
-                valid=False
+                valid = False
                 while not valid:
                     choice = input("")
                     try:
-                        bob=myPlayer.equipped_armour # fix bug that replace item if error
-                        myPlayer.inventory.remove(Armours[int(choice)-1])
-                        myPlayer.equipped_armour = Armours[int(choice)-1]
+                        bob = myPlayer.equipped_armour  # fix bug that replace item if error
+                        myPlayer.inventory.remove(armours[int(choice)-1])
+                        myPlayer.equipped_armour = armours[int(choice)-1]
                         myPlayer.inventory.append(bob)
-                        print("You start wearing: ", Armours[int(choice)-1])
+                        print("You start wearing: ", armours[int(choice)-1])
                         valid = True
 
-                    except (ValueError,IndexError):
+                    except (ValueError, IndexError):
                         print("Invalid choice, try again.")
 
-            elif choice == ("O"):
+            elif choice == "O":
                 print("Would you like to change your ring(R), amulet(A) or artifact(M)?")
                 choice = input("> ").upper()
 
-                if choice == ("R").upper():
+                if choice == "R".upper():
 
-                    Rings = [item for item in myPlayer.inventory if isinstance (item, Ring)]
+                    rings = [item for item in myPlayer.inventory if isinstance(item, Ring)]
 
-                    if not Rings:
+                    if not rings:
                         print("You have no rings to equip.")
                         break
 
                     print("Choose a ring to equip: ")
 
-                    for i,item in enumerate(Rings,1):
-                        print("{}. {}".format(i,item))
+                    for i, item in enumerate(rings, 1):
+                        print("{}. {}".format(i, item))
 
                     valid = False
                     while not valid:
                         choice = input("> ")
                         try:
-                            bob=myPlayer.equipped_ring # fix bug that replicate item if error
-                            myPlayer.inventory.remove(Rings[int(choice)-1])
-                            myPlayer.equipped_ring=Rings[int(choice)-1]
+                            bob = myPlayer.equipped_ring  # fix bug that replicate item if error
+                            myPlayer.inventory.remove(rings[int(choice)-1])
+                            myPlayer.equipped_ring = rings[int(choice)-1]
                             myPlayer.inventory.append(bob)
-                            print("You arm yourself with :",Rings[int(choice)-1])
-                            valid=True
+                            print("You arm yourself with :", rings[int(choice)-1])
+                            valid = True
 
-                        except (ValueError,IndexError):
+                        except (ValueError, IndexError):
                             print("Invalid choice, try again ")
 
-                elif choice == ("A").upper():
+                elif choice == "A".upper():
 
-                    Amulets = [item for item in myPlayer.inventory if isinstance (item, Amulet)]
+                    amulets = [item for item in myPlayer.inventory if isinstance(item, Amulet)]
 
-                    if not Amulets:
+                    if not amulets:
                         print("You have no amulets to equip.")
                         break
 
                     print("Choose the amulet to equip: ")
 
-                    for i,item in enumerate(Amulets,1):
-                        print("{}. {}".format(i,item))
+                    for i, item in enumerate(amulets, 1):
+                        print("{}. {}".format(i, item))
 
                     valid = False
                     while not valid:
                         choice = input("> ")
                         try:
-                            bob=myPlayer.equipped_amulet # fix bug that replicate item if error
-                            myPlayer.inventory.remove(Amulets[int(choice)-1])
-                            myPlayer.equipped_amulet=Amulets[int(choice)-1]
+                            bob = myPlayer.equipped_amulet  # fix bug that replicate item if error
+                            myPlayer.inventory.remove(amulets[int(choice)-1])
+                            myPlayer.equipped_amulet = amulets[int(choice)-1]
                             myPlayer.inventory.append(bob)
-                            print("You arm yourself with :",Amulets[int(choice)-1])
-                            valid=True
+                            print("You arm yourself with :", amulets[int(choice)-1])
+                            valid = True
 
-                        except (ValueError,IndexError):
+                        except (ValueError, IndexError):
                             print("Invalid choice, try again ")
 
-
         elif choice == 2:
-            locations.ShiningKnight(myPlayer)
+            locations.shining_knight(myPlayer)
 
         elif choice == 3:
-            locations.Tarmalune(myPlayer)
+            locations.tarmalune(myPlayer)
             print("")
 
         elif choice == 4:
-            locations.HouseOfKnowledge(myPlayer)
+            locations.house_of_knowledge(myPlayer)
             print("")
 
         elif choice == 5:
-            locations.ShiningSerpent(myPlayer)
+            locations.shining_serpent(myPlayer)
             print("")
 
         elif choice == 6:
-            locations.HouseOfFaces(myPlayer)
+            locations.house_of_faces(myPlayer)
             print("")
 
         elif choice == 7:
-            locations.DannarsMechanical(myPlayer)
+            locations.dannars_mechanical(myPlayer)
             print("")
 
         elif choice == 8:
-            locations.MaskadosMaps(myPlayer)
+            locations.maskados_maps(myPlayer)
             print("")
 
         elif choice == 9:
-            locations.CloakTower(myPlayer)
+            locations.cloak_tower(myPlayer)
             print("")
+
 
 title_screen()

@@ -1,6 +1,6 @@
 
 
-# adding subclass so that in future each weapon can potentialy have
+# adding subclass so that in future each weapon can potentially have
 # unique function
 
 # item_type: 
@@ -10,7 +10,7 @@
 # Ring
 # Amulet
 # Artifact
-#Potion
+# Potion
 
 
 # Weapons
@@ -21,9 +21,10 @@ class Weapon:
         self.damage = damage
         self.value = value
         self.item_type = item_type
-        
+
     def __str__(self):
-        return "{} - Damage: +{} - Gold value: {} - Type: {} ".format(self.name, self.damage, self.value, self.item_type)
+        return "{} - Damage: +{} - Gold value: {} - Type: {} ".format(self.name, self.damage, self.value,
+                                                                      self.item_type)
 
 class Sword(Weapon):
     def __init__(self, name="Sword", damage=5, value=10, item_type="Weapon"):
@@ -89,16 +90,17 @@ class Armour:
         self.protection = protection
         self.value = value
         self.item_type = item_type
-        
+
     def __str__(self):
-        return "{} - Protection: +{} - Gold value: {} - Type: {} ".format(self.name, self.protection, self.value, self.item_type)
+        return "{} - Protection: +{} - Gold value: {} - Type: {} ".format(self.name, self.protection, self.value,
+                                                                          self.item_type)
 
 class Cloak(Armour):
     def __init__(self, name="Cloak", protection=6, value=5, item_type="Armour"):
         Armour.__init__(self, name, protection, value, item_type)
 
 class BrestplateArmour(Armour):
-    def __init__(self, name="Brestplate Armour", protection=14, value=400, item_type="Armour"):
+    def __init__(self, name="Breastplate Armour", protection=14, value=400, item_type="Armour"):
         Armour.__init__(self, name, protection, value, item_type)
 
 class ChainMailArmour(Armour):
@@ -164,7 +166,8 @@ class Azurite(Valuable):
         Valuable.__init__(self, name, description, value, item_type)
 
 class BandedAgate(Valuable):
-    def __init__(self, name="Banded Agate", description="Translucent striped brown, blue, white, or red", value=10, item_type="Valuable"):
+    def __init__(self, name="Banded Agate", description="Translucent striped brown, blue, white, or red", value=10,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class BlueQuartz(Valuable):
@@ -172,7 +175,8 @@ class BlueQuartz(Valuable):
         Valuable.__init__(self, name, description, value, item_type)
 
 class EyeAgate(Valuable):
-    def __init__(self, name="Eye Agate", description="Translucent circles of gray, white, brown, blue, or green", value=10, item_type="Valuable"):
+    def __init__(self, name="Eye Agate", description="Translucent circles of gray, white, brown, blue, or green",
+                 value=10, item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Hematite(Valuable):
@@ -180,15 +184,18 @@ class Hematite(Valuable):
         Valuable.__init__(self, name, description, value, item_type)
 
 class LapisLazuli(Valuable):
-    def __init__(self, name="Lapis Lazuli", description="Opaque light and dark blue with yellow flecks", value=10, item_type="Valuable"):
+    def __init__(self, name="Lapis Lazuli", description="Opaque light and dark blue with yellow flecks", value=10,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Malachite(Valuable):
-    def __init__(self, name="Malachite", description="Opaque striated light and dark green", value=10, item_type="Valuable"):
+    def __init__(self, name="Malachite", description="Opaque striated light and dark green", value=10,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class MossAgate(Valuable):
-    def __init__(self, name="Moss Agate", description="Translucent pink or yellow-white with mossy gray or green markings", value=10, item_type="Valuable"):
+    def __init__(self, name="Moss Agate", description="Translucent pink or yellow-white with mossy gray or "
+                                                      "green markings", value=10, item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Obsidian(Valuable):
@@ -200,7 +207,8 @@ class Rhodochrosite(Valuable):
         Valuable.__init__(self, name, description, value, item_type)
 
 class TigerEye(Valuable):
-    def __init__(self, name="Tiger Eye", description="Translucent brown with golden center", value=10, item_type="Valuable"):
+    def __init__(self, name="Tiger Eye", description="Translucent brown with golden center", value=10,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Turquoise(Valuable):
@@ -210,7 +218,8 @@ class Turquoise(Valuable):
 # 50 gp Gemstones
 
 class Bloodstone(Valuable):
-    def __init__(self, name="Bloodstone", description="Opaque dark gray with red flecks", value=50, item_type="Valuable"):
+    def __init__(self, name="Bloodstone", description="Opaque dark gray with red flecks", value=50,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Carnelian(Valuable):
@@ -234,15 +243,18 @@ class Jasper(Valuable):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Moonstone(Valuable):
-    def __init__(self, name="Moonstone", description="Translucent white with pale blue glow", value=50, item_type="Valuable"):
+    def __init__(self, name="Moonstone", description="Translucent white with pale blue glow", value=50,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Onyx(Valuable):
-    def __init__(self, name="Onyx", description="Opaque bands of black and white, or pure black or white", value=50, item_type="Valuable"):
+    def __init__(self, name="Onyx", description="Opaque bands of black and white, or pure black or white", value=50,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Quartz(Valuable):
-    def __init__(self, name="Quartz", description="Transparent white, smoky gray, or yellow", value=50, item_type="Valuable"):
+    def __init__(self, name="Quartz", description="Transparent white, smoky gray, or yellow", value=50,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Sardonyx(Valuable):
@@ -250,7 +262,8 @@ class Sardonyx(Valuable):
         Valuable.__init__(self, name, description, value, item_type)
 
 class StarRoseQuartz(Valuable):
-    def __init__(self, name="Star Rose Quartz", description="Translucent rosy stone with white star-shaped centre", value=50, item_type="Valuable"):
+    def __init__(self, name="Star Rose Quartz", description="Translucent rosy stone with white star-shaped centre",
+                 value=50, item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Zircon(Valuable):
@@ -260,7 +273,8 @@ class Zircon(Valuable):
 # 100 gp Gemstones
 
 class Amber(Valuable):
-    def __init__(self, name="Amber", description="Transparent watery gold to rich gold", value=100, item_type="Valuable"):
+    def __init__(self, name="Amber", description="Transparent watery gold to rich gold", value=100,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Amethyst(Valuable):
@@ -268,7 +282,8 @@ class Amethyst(Valuable):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Chrysoberyl(Valuable):
-    def __init__(self, name="Chrysoberyl", description="Transparent yellow-green to pale green", value=100, item_type="Valuable"):
+    def __init__(self, name="Chrysoberyl", description="Transparent yellow-green to pale green", value=100,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Coral(Valuable):
@@ -276,11 +291,13 @@ class Coral(Valuable):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Garnet(Valuable):
-    def __init__(self, name="Garnet", description="Transparent red, brown-green, or violet", value=100, item_type="Valuable"):
+    def __init__(self, name="Garnet", description="Transparent red, brown-green, or violet", value=100,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Jade(Valuable):
-    def __init__(self, name="Jade", description="Translucent light green, deep green, or white", value=100, item_type="Valuable"):
+    def __init__(self, name="Jade", description="Translucent light green, deep green, or white", value=100,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Jet(Valuable):
@@ -288,15 +305,18 @@ class Jet(Valuable):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Pearl(Valuable):
-    def __init__(self, name="Pearl", description="Opaque lustrous white, yellow, or pink", value=100, item_type="Valuable"):
+    def __init__(self, name="Pearl", description="Opaque lustrous white, yellow, or pink", value=100,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Spinel(Valuable):
-    def __init__(self, name="Spinel", description="Transparent red, red-brown, or deep green", value=100, item_type="Valuable"):
+    def __init__(self, name="Spinel", description="Transparent red, red-brown, or deep green", value=100,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Tourmaline(Valuable):
-    def __init__(self, name="Tourmaline", description="Transparent pale green, blue, brown, or red", value=100, item_type="Valuable"):
+    def __init__(self, name="Tourmaline", description="Transparent pale green, blue, brown, or red", value=100,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 # 500 gp Gemstones
@@ -328,11 +348,13 @@ class Topaz(Valuable):
 # 1000 gp Gemstones
 
 class BlacOpal(Valuable):
-    def __init__(self, name="Black Opal", description="Translucent dark green with black mottling and golden flecks", value=1000, item_type="Valuable"):
+    def __init__(self, name="Black Opal", description="Translucent dark green with black mottling and golden flecks",
+                 value=1000, item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class BlueSapphire(Valuable):
-    def __init__(self, name="Blue Sapphire", description="Transparent blue-white to medium blue", value=1000, item_type="Valuable"):
+    def __init__(self, name="Blue Sapphire", description="Transparent blue-white to medium blue", value=1000,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Emerald(Valuable):
@@ -344,29 +366,35 @@ class FireOpal(Valuable):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Opal(Valuable):
-    def __init__(self, name="Opal", description="Translucent pale blue with green and golden mottling", value=1000, item_type="Valuable"):
+    def __init__(self, name="Opal", description="Translucent pale blue with green and golden mottling", value=1000,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class StarRuby(Valuable):
-    def __init__(self, name="Star Ruby", description="Translucent ruby with white star-shaped center", value=1000, item_type="Valuable"):
+    def __init__(self, name="Star Ruby", description="Translucent ruby with white star-shaped center", value=1000,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class StarSapphire(Valuable):
-    def __init__(self, name="Star Sapphire", description="Translucent blue sapphire with white star-shaped center", value=1000, item_type="Valuable"):
+    def __init__(self, name="Star Sapphire", description="Translucent blue sapphire with white star-shaped center",
+                 value=1000, item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class YellowSapphire(Valuable):
-    def __init__(self, name="Yellow Sapphire", description="Transparent fiery yellow or yellow-green", value=1000, item_type="Valuable"):
+    def __init__(self, name="Yellow Sapphire", description="Transparent fiery yellow or yellow-green", value=1000,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 # 5000 gp Gemstones
 
 class BlackSapphire(Valuable):
-    def __init__(self, name="Black Sapphire", description="Translucent lustrous black with glowing highlights", value=5000, item_type="Valuable"):
+    def __init__(self, name="Black Sapphire", description="Translucent lustrous black with glowing highlights",
+                 value=5000, item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Diamond(Valuable):
-    def __init__(self, name="Diamond", description="Transparent blue-white, canary, pink, brown, or blue", value=5000, item_type="Valuable"):
+    def __init__(self, name="Diamond", description="Transparent blue-white, canary, pink, brown, or blue", value=5000,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Jacinth(Valuable):
@@ -374,7 +402,8 @@ class Jacinth(Valuable):
         Valuable.__init__(self, name, description, value, item_type)
 
 class Ruby(Valuable):
-    def __init__(self, name="Ruby", description="Transparent clear red to deep crimson", value=5000, item_type="Valuable"):
+    def __init__(self, name="Ruby", description="Transparent clear red to deep crimson", value=5000,
+                 item_type="Valuable"):
         Valuable.__init__(self, name, description, value, item_type)
 
 # Rings
@@ -390,52 +419,64 @@ class Ring:
         return "{} - {} - Gold value: {} - Type: {} ".format(self.name, self.description, self.value, self.item_type)
 
 class WeakRingStr(Ring):
-    def __init__(self, name="Weak Ring of Strength",description="You gain a +1 bonus to your strength while wearing this ring.", value=100, item_type="Ring"):
+    def __init__(self, name="Weak Ring of Strength", description="You gain a +1 bonus to your strength while wearing "
+                                                                 "this ring.", value=100, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
 
 class WeakRingDex(Ring):
-    def __init__(self, name="Weak Ring of Dexterity",description="You gain a +1 bonus to your dexterity while wearing this ring.", value=100, item_type="Ring"):
+    def __init__(self, name="Weak Ring of Dexterity", description="You gain a +1 bonus to your dexterity while wearing "
+                                                                  "this ring.", value=100, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
 
 class WeakRingInt(Ring):
-    def __init__(self, name="Weak Ring of Intelligence",description="You gain a +1 bonus to your intelligence while wearing this ring.", value=100, item_type="Ring"):
+    def __init__(self, name="Weak Ring of Intelligence", description="You gain a +1 bonus to your intelligence while "
+                                                                     "wearing this ring.", value=100, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
 
 class WeakRingCon(Ring):
-    def __init__(self, name="Weak Ring of Constitution",description="You gain a +1 bonus to your constitution while wearing this ring.", value=100, item_type="Ring"):
+    def __init__(self, name="Weak Ring of Constitution", description="You gain a +1 bonus to your constitution while "
+                                                                     "wearing this ring.", value=100, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
 
 class WeakRingCha(Ring):
-    def __init__(self, name="Weak Ring of Charisma",description="You gain a +2 bonus to your charisma while wearing this ring.", value=100, item_type="Ring"):
+    def __init__(self, name="Weak Ring of Charisma", description="You gain a +2 bonus to your charisma while wearing "
+                                                                 "this ring.", value=100, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
 
 
 class RingProt(Ring):
-    def __init__(self, name="Ring of Protection",description="You gain a +1 bonus to AC while wearing this ring.", value=200, item_type="Ring"):
+    def __init__(self, name="Ring of Protection", description="You gain a +1 bonus to AC while wearing this ring.",
+                 value=200, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
 
 class RingLife(Ring):
-    def __init__(self, name="Ring of Life",description="You gain a 10 bonus to health while wearing this ring.", value=200, item_type="Ring"):
+    def __init__(self, name="Ring of Life", description="You gain a 10 bonus to health while wearing this ring.",
+                 value=200, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
 
 class RingStr(Ring):
-    def __init__(self, name="Ring of Strength",description="You gain a +2 bonus to your strength while wearing this ring.", value=200, item_type="Ring"):
+    def __init__(self, name="Ring of Strength", description="You gain a +2 bonus to your strength while wearing "
+                                                            "this ring.", value=200, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
 
 class RingDex(Ring):
-    def __init__(self, name="Ring of Dexterity",description="You gain a +2 bonus to your dexterity while wearing this ring.", value=200, item_type="Ring"):
+    def __init__(self, name="Ring of Dexterity", description="You gain a +2 bonus to your dexterity while wearing "
+                                                             "this ring.", value=200, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
 
 class RingInt(Ring):
-    def __init__(self, name="Ring of Intelligence",description="You gain a +2 bonus to your intelligence while wearing this ring.", value=200, item_type="Ring"):
+    def __init__(self, name="Ring of Intelligence", description="You gain a +2 bonus to your intelligence while wearing"
+                                                                " this ring.", value=200, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
 
 class RingCon(Ring):
-    def __init__(self, name="Ring of Constitution",description="You gain a +2 bonus to your constitution while wearing this ring.", value=200, item_type="Ring"):
+    def __init__(self, name="Ring of Constitution", description="You gain a +2 bonus to your constitution while wearing"
+                                                                "this ring.", value=200, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
 
 class RingCha(Ring):
-    def __init__(self, name="Ring of Charisma",description="You gain a +2 bonus to your charisma while wearing this ring.", value=200, item_type="Ring"):
+    def __init__(self, name="Ring of Charisma", description="You gain a +2 bonus to your charisma while wearing "
+                                                            "this ring.", value=200, item_type="Ring"):
         Ring.__init__(self, name, description, value, item_type)
 
 
@@ -452,51 +493,68 @@ class Amulet:
         return "{} - {} - Gold value: {} - Type: {} ".format(self.name, self.description, self.value, self.item_type)
 
 class WeakAmuletStr(Amulet):
-    def __init__(self, name="Weak Amulet of Strength",description="You gain a +1 bonus to your strength while wearing this amulet.", value=100, item_type="Amulet"):
+    def __init__(self, name="Weak Amulet of Strength", description="You gain a +1 bonus to your strength while wearing "
+                                                                   "this amulet.", value=100, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class WeakAmuletDex(Amulet):
-    def __init__(self, name="Weak Amulet of Dexterity",description="You gain a +1 bonus to your dexterity while wearing this amulet.", value=100, item_type="Amulet"):
+    def __init__(self, name="Weak Amulet of Dexterity", description="You gain a +1 bonus to your dexterity while "
+                                                                    "wearing this amulet.", value=100,
+                 item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class WeakAmuletInt(Amulet):
-    def __init__(self, name="Weak Amulet of Intelligence",description="You gain a +1 bonus to your intelligence while wearing this amulet.", value=100, item_type="Amulet"):
+    def __init__(self, name="Weak Amulet of Intelligence", description="You gain a +1 bonus to your intelligence while "
+                                                                       "wearing this amulet.", value=100,
+                 item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class WeakAmuletCon(Amulet):
-    def __init__(self, name="Weak Amulet of Constitution",description="You gain a +1 bonus to your constitution while wearing this amulet.", value=100, item_type="Amulet"):
+    def __init__(self, name="Weak Amulet of Constitution", description="You gain a +1 bonus to your constitution while "
+                                                                       "wearing this amulet.", value=100,
+                 item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class WeakAmuletCha(Amulet):
-    def __init__(self, name="Weak Amulet of Charisma",description="You gain a +1 bonus to your charisma while wearing this amulet.", value=100, item_type="Amulet"):
+    def __init__(self, name="Weak Amulet of Charisma", description="You gain a +1 bonus to your charisma while wearing "
+                                                                   "this amulet.", value=100, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletProt(Amulet):
-    def __init__(self, name="Amulet of Protection",description="You gain a +1 bonus to AC while wearing this amulet.", value=200, item_type="Amulet"):
+    def __init__(self, name="Amulet of Protection", description="You gain a +1 bonus to AC while wearing this amulet.",
+                 value=200, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletLife(Amulet):
-    def __init__(self, name="Amulet of Life",description="You gain a 10 bonus to health while wearing this amulet.", value=200, item_type="Amulet"):
+    def __init__(self, name="Amulet of Life", description="You gain a 10 bonus to health while wearing this amulet.",
+                 value=200, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletStr(Amulet):
-    def __init__(self, name="Amulet of Strength",description="You gain a +2 bonus to your strength while wearing this amulet.", value=200, item_type="Amulet"):
+    def __init__(self, name="Amulet of Strength", description="You gain a +2 bonus to your strength while wearing "
+                                                              "this amulet.", value=200, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletDex(Amulet):
-    def __init__(self, name="Amulet of Dexterity",description="You gain a +2 bonus to your dexterity while wearing this amulet.", value=200, item_type="Amulet"):
+    def __init__(self, name="Amulet of Dexterity", description="You gain a +2 bonus to your dexterity while wearing "
+                                                               "this amulet.", value=200, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletInt(Amulet):
-    def __init__(self, name="Amulet of Intelligence",description="You gain a +2 bonus to your intelligence while wearing this amulet.", value=200, item_type="Amulet"):
+    def __init__(self, name="Amulet of Intelligence", description="You gain a +2 bonus to your intelligence while "
+                                                                  "wearing this amulet.", value=200,
+                 item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletCon(Amulet):
-    def __init__(self, name="Amulet of Constitution",description="You gain a +2 bonus to your constitution while wearing this amulet.", value=200, item_type="Amulet"):
+    def __init__(self, name="Amulet of Constitution", description="You gain a +2 bonus to your constitution while "
+                                                                  "wearing this amulet.", value=200,
+                 item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 class AmuletCha(Amulet):
-    def __init__(self, name="Amulet of Charisma",description="You gain a +2 bonus to your charisma while wearing this amulet.", value=200, item_type="Amulet"):
+    def __init__(self, name="Amulet of Charisma", description="You gain a +2 bonus to your charisma while wearing "
+                                                              "this amulet.", value=200, item_type="Amulet"):
         Amulet.__init__(self, name, description, value, item_type)
 
 # Artifacts
@@ -522,23 +580,28 @@ class Potion:
         self.item_type = item_type
 
     def __str__(self):
-        return "{} - {} - Gold value: {} - Type: {} ".format(self.name, self.description, self.heal, self.value, self.item_type)
+        return "{} - {} - Gold value: {} - Type: {} ".format(self.name, self.description, self.heal, self.value,
+                                                             self.item_type)
 
 class HealPotCommon(Potion):
-    def __init__(self, name="Healing Potion", description="This healing potion restores 10HP", heal=10, value=50, item_type="Potion"):
+    def __init__(self, name="Healing Potion", description="This healing potion restores 10HP", heal=10, value=50,
+                 item_type="Potion"):
         Potion.__init__(self, name, description, heal, Valuable, item_type)
 
 class HealPotGreater(Potion):
-    def __init__(self, name="Greater Healing Potion", description="This healing potion restores 20HP", heal=20, value=200, item_type="Potion"):
+    def __init__(self, name="Greater Healing Potion", description="This healing potion restores 20HP", heal=20,
+                 value=200, item_type="Potion"):
         Potion.__init__(self, name, description, heal, Valuable, item_type)
 
 class HealPotSuperior(Potion):
-    def __init__(self, name="Superior Healing Potion", description="This healing potion restores 40HP", heal=40, value=750, item_type="Potion"):
+    def __init__(self, name="Superior Healing Potion", description="This healing potion restores 40HP", heal=40,
+                 value=750, item_type="Potion"):
         Potion.__init__(self, name, description, heal, Valuable, item_type)
 
 
 class HealPotSupreme(Potion):
-    def __init__(self, name="Supreme Healing Potion", description="This healing potion restores 60HP", heal=60, value=3500, item_type="Potion"):
+    def __init__(self, name="Supreme Healing Potion", description="This healing potion restores 60HP", heal=60,
+                 value=3500, item_type="Potion"):
         Potion.__init__(self, name, description, heal, Valuable, item_type)
 
 

@@ -10,8 +10,9 @@ class Player(object):
         self.equipped_armour = HideArmour()
         self.equipped_ring = RingStr()
         self.equipped_amulet = AmuletStr()
-        #self.equipped_artifact = "" 
-        self.inventory = [BrestplateArmour(), Longsword(), Aquamarine(), Club(), Azurite(), RingProt(), AmuletProt(), PaddedArmour()]
+        # self.equipped_artifact = ""
+        self.inventory = [BrestplateArmour(), Longsword(), Aquamarine(), Club(), Azurite(), RingProt(), AmuletProt(),
+                          PaddedArmour()]
         self.gold = 1000
         self.location = ""
         self.sell_mod = 0
