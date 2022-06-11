@@ -43,7 +43,7 @@ def shining_knight(Player):
 
         shining_sell_list_weapons = [Club(), Sword(), Dagger(), Handaxe(), Longsword(), Mace(), Quarterstaff(),
                                      Warhammer()]
-        shining_sell_list_armours = [Cloak(), BrestplateArmour(), ChainMailArmour(), ChainShirtArmour(),
+        shining_sell_list_armours = [Cloak(), BreastplateArmour(), ChainMailArmour(), ChainShirtArmour(),
                                      HalfPlateArmour(), HideArmour(), LeatherArmour(), PlateArmour(), RingMailArmour(),
                                      ScaleMailArmour(), PaddedArmour(), SplintArmour(), StuddedLeatherArmour()]
 
@@ -74,7 +74,7 @@ def shining_knight(Player):
                     weapon_buy_choice = input("> ")
                     try:
                         Player.inventory.append(weapons_buy[int(weapon_buy_choice) - 1])
-                        buy_val = item.value * Player.buy_mod
+                        buy_val = weapons_buy[int(weapon_buy_choice) - 1].item_price * Player.buy_mod
                         Player.gold -= round(buy_val, 2)
                         print("You bought a ", weapons_buy[int(weapon_buy_choice) - 1])
                         valid = True
@@ -98,7 +98,7 @@ def shining_knight(Player):
                     armour_buy_choice = input("> ")
                     try:
                         Player.inventory.append(armours_buy[int(armour_buy_choice) - 1])
-                        buy_val = item.value * Player.buy_mod
+                        buy_val = armours_buy[int(armour_buy_choice) - 1].item_price * Player.buy_mod
                         Player.gold -= round(buy_val, 2)
                         print("you bought a ", armours_buy[int(armour_buy_choice) - 1])
                         valid = True
@@ -130,7 +130,7 @@ def shining_knight(Player):
                         weapon_sell_choice = input("> ")
                         try:
                             Player.inventory.remove(weapons_sell[int(weapon_sell_choice) - 1])
-                            sell_val = item.value * Player.sell_mod
+                            sell_val = weapons_sell[int(weapon_sell_choice) - 1].item_price * Player.sell_mod
                             Player.gold += round(sell_val, 2)
                             print("You sold a ", weapons_sell[int(weapon_sell_choice) - 1])
                             valid = True
@@ -154,7 +154,7 @@ def shining_knight(Player):
                         armour_sell_choice = input("> ")
                         try:
                             Player.inventory.remove(armours_sell[int(armour_sell_choice) - 1])
-                            sell_val = item.value * Player.sell_mod
+                            sell_val = armours_sell[int(armour_sell_choice) - 1].item_price * Player.sell_mod
                             Player.gold += round(sell_val, 2)
                             print("You sold a ", armours_sell[int(armour_sell_choice) - 1])
                             valid = True
@@ -182,7 +182,7 @@ def shining_knight(Player):
                             ring_sell_choice = input("> ")
                             try:
                                 Player.inventory.remove(rings_sell[int(ring_sell_choice) - 1])
-                                sell_val = item.value * Player.sell_mod
+                                sell_val = rings_sell[int(ring_sell_choice) - 1].item_price * Player.sell_mod
                                 Player.gold += round(sell_val, 2)
                                 print("You sold a ", rings_sell[int(ring_sell_choice) - 1])
                                 valid = True
@@ -206,7 +206,7 @@ def shining_knight(Player):
                             amulet_sell_choice = input("> ")
                             try:
                                 Player.inventory.remove(amulets_sell[int(amulet_sell_choice) - 1])
-                                sell_val = item.value * Player.sell_mod
+                                sell_val = amulets_sell[int(amulet_sell_choice) - 1].item_price * Player.sell_mod
                                 Player.gold += round(sell_val, 2)
                                 print("You sold a ", amulets_sell[int(amulet_sell_choice) - 1])
                                 valid = True
@@ -230,7 +230,7 @@ def shining_knight(Player):
                             valuable_sell_choice = input("> ")
                             try:
                                 Player.inventory.remove(valuables_sell[int(valuable_sell_choice) - 1])
-                                sell_val = item.value * Player.sell_mod
+                                sell_val = valuables_sell[int(valuable_sell_choice) - 1].item_price * Player.sell_mod
                                 Player.gold += round(sell_val, 2)
                                 print("You sold a ", valuables_sell[int(valuable_sell_choice) - 1], " for ", sell_val)
                                 valid = True
